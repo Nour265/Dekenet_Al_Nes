@@ -1,0 +1,1500 @@
+/* =========================================
+   1. Reset and Base Styles
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color Palette */
+    --teal-blue: #296C86;
+    --dark-blue: #1f4e67;
+    --mustard-yellow: #E1B23E;     /* Main yellow */
+    --light-yellow: #f0c46a;       /* Lighter hover yellow */
+    --card-yellow-bg: #EFC668;     /* Specific background for stat icons */
+    
+    /* Neutrals */
+    --white: #ffffff;
+    --light-grey: #f5f5f5;
+    --text-dark: #163344;
+    --text-light: #666666;
+    
+    /* Effects */
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   2. Header and Navigation
+   ========================================= */
+
+
+/* Ensure the header sits ON TOP of the hero, not above it */
+.header {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent; /* No background color */
+    box-shadow: none;              /* No shadow line */
+    border: none;
+    z-index: 1000;
+    padding-top: 15px;
+}
+
+/* Fluid Container for wide navbar spacing */
+.container-fluid {
+    width: 96%;
+    max-width: 1800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Logo Size */
+.nav-brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 90px; /* Bigger logo */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Nav Menu - Centered & Spaced */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+    align-items: center;
+    margin: 0 auto; /* Centers the menu between logo and actions */
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.05rem;
+    position: relative;
+    display: flex;
+    flex-direction: row; /* Arrow next to text */
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.nav-menu a:hover {
+    opacity: 0.8;
+}
+
+.nav-menu a.active {
+    color: var(--white);
+}
+
+/* Active Dot - Floating below text */
+.active-dot {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--white);
+    border-radius: 50%;
+    display: block;
+}
+
+/* Nav Icons */
+.nav-icon {
+    stroke: var(--white);
+    margin-top: 2px;
+}
+
+/* Actions (Search + Auth) */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent glass */
+    border-radius: 6px;
+    padding: 0.7rem 1rem;
+    gap: 0.8rem;
+    width: 320px; /* Long search bar */
+    backdrop-filter: blur(5px);
+}
+
+.search-icon {
+    stroke: var(--white);
+    min-width: 20px;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    color: var(--white);
+    outline: none;
+    width: 100%;
+    font-size: 0.95rem;
+}
+
+.search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Auth Links */
+.auth-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.auth-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: opacity 0.3s ease;
+}
+
+.auth-link:hover {
+    opacity: 0.8;
+}
+
+.auth-icon {
+    stroke: var(--white);
+    stroke-width: 2px;
+}
+
+.auth-separator {
+    color: var(--white);
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin: 0 0.2rem;
+    opacity: 0.7;
+}
+
+/* Mobile Toggle */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+    border-radius: 2px;
+}
+
+
+/* =========================================
+   3. Hero Section (Lowered Man & Overlapping Card)
+   ========================================= */
+.hero {
+    background-color: var(--teal-blue);
+    padding: 180px 0 120px;
+    position: relative;
+    min-height: 850px;
+    /* IMPORTANT: Set to auto so ripples can pop out, but not trap content */
+    z-index: auto; 
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.hero-ripple-left {
+    position: absolute;
+    top: 110%;
+    transform: translateY(-50%);
+    left: -500px; /* Centered on the left border */
+    width: 1000px;
+    height: 1000px;
+    border-radius: 50%;
+    z-index: 5;
+    pointer-events: none;
+    
+    /* Exactly 4 rings with 70px spacing */
+    background: radial-gradient(
+        circle at center,
+        transparent 0px,
+        transparent 69px,
+        rgba(196, 228, 255, 0.589) 70px, /* Ring 1 */
+        transparent 71px,
+        
+        transparent 139px,
+        rgba(196, 228, 255, 0.589) 140px, /* Ring 2 */
+        transparent 141px,
+        
+        transparent 209px,
+         rgba(196, 228, 255, 0.589) 210px, /* Ring 3 */
+        transparent 211px,
+
+        transparent 279px,
+       rgba(196, 228, 255, 0.589) 280px, /* Ring 4 */
+        transparent 281px
+    );
+}
+
+.hero-ripple-right {
+    position: absolute;
+    bottom: -250px; 
+    left:78%; 
+    width: 600px; 
+    height: 600px;
+    border-radius: 50%;
+    z-index: 5;
+    pointer-events: none;
+    /* Exactly 4 rings with 60px spacing (slightly tighter for smaller ripple) */
+    background: radial-gradient(
+        circle at center,
+        transparent 0px,
+        transparent 69px,
+       rgba(196, 228, 255, 0.589) 70px, /* Ring 1 */
+        transparent 71px,
+        
+        transparent 139px,
+       rgba(196, 228, 255, 0.589) 140px, /* Ring 2 */
+        transparent 141px,
+        
+        transparent 209px,
+       rgba(196, 228, 255, 0.589) 210px, /* Ring 3 */
+        transparent 211px,
+
+        transparent 279px,
+        rgba(196, 228, 255, 0.589) 280px, /* Ring 4 */
+        transparent 281px
+    );
+}
+/* --- CONTAINER & LAYOUT --- */
+.hero .container {
+    max-width: 1700px;
+    width: 92%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 6;
+    width: 100%;
+}
+
+/* --- LEFT SIDE: TEXT --- */
+.hero-text {
+    color: var(--white);
+    width: 45%;
+    max-width: 600px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 50px;
+}
+
+.hero-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    line-height: 1.1;
+}
+
+.hero-description {
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+.btn {
+    padding: 16px 48px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-yellow {
+    background-color: var(--mustard-yellow);
+    color: var(--white);
+    box-shadow: none;
+}
+
+.btn-yellow:hover {
+    background-color: var(--light-yellow);
+    transform: translateY(-3px);
+}
+
+/* --- RIGHT SIDE: IMAGE COMPOSITION --- */
+.hero-image-wrapper {
+    position: relative;
+    width: 50%;
+    height: 720px; 
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.hero-image-container {
+    position: relative;
+    width: 600px;
+    height: 100%; 
+    margin-right: 5%;
+}
+
+/* 1. Thin Ring (Back) */
+.bg-ring-offset {
+    position: absolute;
+    width: 620px;
+    height: 620px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    bottom: 0; 
+    left: 45%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+/* 2. Yellow Circle (Middle) */
+.bg-circle {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: var(--mustard-yellow);
+    border-radius: 50%;
+    bottom: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* 3. Yellow Dot (Decoration) */
+.bg-yellow-dot {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: var(--mustard-yellow);
+    border-radius: 50%;
+    bottom: 40px;
+    left: 0;
+    z-index: 2;
+}
+
+/* 4. The Man (Front - Lowered) */
+.hero-person-image {
+    position: absolute;
+    /* Pushed down by 25px to align perfectly with circle bottom */
+    bottom: -45px; 
+    left: 47%;
+    transform: translateX(-50%);
+    height: 820px; 
+    width: auto;
+    object-fit: contain;
+    z-index: 3;
+}
+
+/* --- STAT CARDS --- */
+.stat-card {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    z-index: 10;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stat-card-1 {
+    top: 35%;
+    left: -60px;
+    min-width: 210px;
+}
+
+/* Plastics Card - Moved LEFT to Intercept Circle */
+.stat-card-2 {
+    top: 10%;
+    /* Changed from -30px to 10px to pull it inside */
+    right: 10px; 
+    flex-direction: column;
+    padding: 24px;
+    gap: 8px;
+    text-align: center;
+    min-width: 160px;
+}
+
+.stat-card-3 {
+    bottom: 18%;
+    right: -60px;
+    min-width: 180px;
+}
+
+.icon-yellow-box {
+    width: 48px;
+    height: 48px;
+    background-color: var(--card-yellow-bg);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-progress-circle { width: 60px; height: 60px; margin-bottom: 5px; }
+.stat-content { display: flex; flex-direction: column; }
+.stat-content.centered { align-items: center; }
+.stat-number { font-weight: 700; font-size: 1.4rem; color: var(--text-dark); }
+.stat-label { font-weight: 500; font-size: 0.9rem; color: #666; }
+.stat-label-small { font-weight: 400; font-size: 0.8rem; color: #888; }
+
+/* =========================================
+   4. Our Story Section (Compacted & Fixed)
+   ========================================= */
+.our-story {
+    background-color: var(--mustard-yellow);
+    padding: 40px 0 60px;
+    position: relative;
+    /* IMPORTANT: Set to auto (or remove z-index) so the background is layer 0 */
+    z-index: auto; 
+}
+
+/* Match the wide container from Hero */
+.our-story .container {
+    max-width: 1700px;
+    width: 92%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.our-story .section-title {
+    color: var(--white);
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem; /* Reduced margin */
+}
+
+/* --- THE CARD --- */
+.story-card {
+    background-color: var(--teal-blue);
+    border-radius: 40px;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    width: 100%;
+    
+    /* IMPORTANT: Raise card above the ripples (z-index 5) */
+    position: relative;
+    z-index: 10; 
+}
+
+/* Left Content */
+.story-content {
+    flex: 1;
+    color: var(--white);
+}
+
+.story-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    text-align: left;
+}
+
+/* Right Slider */
+.story-image-slider {
+    flex: 0.9;
+    height: 400px;
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    z-index: 1; /* Default state */
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2; /* Active state */
+}
+/* Responsive */
+@media (max-width: 1024px) {
+    .story-card {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+        text-align: center;
+    }
+    .story-text {
+        text-align: center;
+    }
+    .story-image-slider {
+        width: 100%;
+        height: 300px;
+        flex: auto;
+    }
+}
+/* =========================================
+   5. Our Mission Section (No Cards, Big Icons)
+   ========================================= */
+.our-mission {
+    background-color: var(--white);
+    padding: 20px ;
+    text-align: center;
+}
+
+/* Section Title - Yellow */
+.our-mission .section-title {
+    color: var(--mustard-yellow);
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 60px;
+}
+
+.mission-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Increased gap to make them take up more space */
+    gap: 5rem; 
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+/* Remove Card Styling (Transparent Background) */
+.mission-card {
+    background-color: transparent; /* No background */
+    padding: 10px;
+    box-shadow: none; /* No shadow */
+    border-radius: 0;
+    transition: var(--transition);
+    /* Ensure content is centered */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Icon - Much Bigger */
+.mission-icon {
+    width: 110px;  /* Increased from 60px */
+    height: 110px; /* Increased from 60px */
+    margin-bottom: 25px;
+    object-fit: contain;
+}
+
+/* --- FIX: Make the MIDDLE icon bigger --- */
+.mission-pillars .mission-card:nth-child(2) .mission-icon {
+    width: 150px;  /* Increased to visually match the others */
+    height: 150px; /* Increased height */
+    margin-bottom: 15px; /* Reduced margin slightly to keep alignment */
+    margin-top: -20px; /* Pull it up slightly to align centers */
+}
+
+/* Subtitles - Yellow */
+.mission-subtitle {
+    color: var(--mustard-yellow);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Text - Bigger & Readable */
+.mission-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #555; /* Slightly softer dark grey */
+    max-width: 320px; /* Prevents text from getting too wide/unreadable */
+    margin: 0 auto;
+}
+
+.mission-actions {
+    margin-top: 50px;
+}
+
+/* Custom Button Style for this section */
+.btn-primary-darker {
+    background-color: var(--teal-blue);
+    color: var(--white);
+    padding: 16px 42px;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    transition: var(--transition);
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.btn-primary-darker:hover {
+    background-color: var(--dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(41, 108, 134, 0.3);
+}
+
+/* Thinner Font Style */
+.btn-thinner {
+    font-weight: 500; 
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .mission-pillars {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* =========================================
+   6. Subscription Box Section (Fixed Alignment)
+   ========================================= */
+.subscription-box {
+    background-color: var(--teal-blue);
+    padding: 80px 0;
+    position: relative;
+    overflow: visible; /* Allows ripples to extend outside */
+    z-index: 1;
+}
+
+.subscription-box .container {
+    position: relative;
+    z-index: 2;
+}
+
+.subscription-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* --- Left Side Wrapper (Anchor Point) --- */
+.subscription-image-wrapper {
+    position: relative; /* Shapes are now anchored to THIS */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    /* No z-index here so children can participate in global stacking if needed, 
+       but relative positioning creates a local context for absolute children */
+}
+
+/* --- Background Elements (Moved Inside Wrapper) --- */
+
+/* 1. Yellow Circle (Centered in Wrapper) */
+.subscription-box-bg-circle {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: var(--mustard-yellow);
+    border-radius: 50%;
+    /* Center perfectly behind the image */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Behind image */
+}
+
+/* 2. Thin White Ring (Upper Left Offset) */
+.subscription-ring-offset {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    /* Slightly offset from center */
+    top: 45%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    z-index: -2; /* Behind yellow circle */
+    pointer-events: none;
+}
+
+/* 3. Hero-Style Ripple (Lower Left) */
+.subscription-ripple {
+    position: absolute;
+    /* Anchored to bottom-left of the wrapper center */
+    bottom: -100px; 
+    left: -100px;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    z-index: -3; /* Deepest background */
+    pointer-events: none;
+    background: radial-gradient(
+        circle at center,
+        transparent 0px,
+        transparent 39px,
+        rgba(181, 232, 255, 0.505) 40px,
+        transparent 41px,
+        
+        transparent 79px,
+        rgba(181, 232, 255, 0.505) 80px,
+        transparent 81px,
+        
+        transparent 119px,
+        rgba(181, 232, 255, 0.505) 120px,
+        transparent 121px,
+
+        transparent 159px,
+       rgba(181, 232, 255, 0.505) 160px,
+        transparent 161px
+    );
+    mask-image: radial-gradient(circle, black 40%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle, black 40%, transparent 70%);
+}
+
+/* --- Images & Cards --- */
+
+/* The Crate Image */
+.subscription-crate-image {
+    width: 110%; 
+    max-width: 600px;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    z-index: 1; /* Above circle */
+    transform: rotate(-5deg) skewX(-2deg) scale(1.05);
+}
+
+/* The Floating Card */
+.subscription-floating-card {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    background: #ffffff;
+    padding: 1.2rem 1.8rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 3; /* Topmost */
+}
+
+/* Card Styles (Same as before) */
+.sub-card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #f4c86a, #e1b23e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 28px;
+}
+
+.sub-card-title {
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 1.3rem;
+    line-height: 1.1;
+}
+
+.sub-card-subtitle {
+    font-weight: 500;
+    color: #5f6f7a;
+    font-size: 0.95rem;
+    line-height: 1.3;
+}
+
+/* --- Right Side Text (Same as before) --- */
+.subscription-text-content {
+    color: var(--white);
+    text-align: left;
+}
+
+.subscription-title {
+    font-family: "Candal", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: var(--white);
+}
+
+.subscription-description {
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.benefits-list {
+    list-style: none;
+    margin-bottom: 2.5rem;
+}
+
+.benefits-list li {
+    padding: 0.6rem 0;
+    font-size: 1.05rem;
+    position: relative;
+    padding-left: 2rem;
+    line-height: 1.5;
+}
+
+.benefits-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    color: var(--mustard-yellow);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.btn-subscription {
+    padding: 16px 42px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .subscription-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+    .subscription-image-wrapper {
+        height: 450px;
+        /* Ensure centering persists on mobile */
+        width: 100%;
+    }
+    .subscription-crate-image {
+        width: 80%;
+        transform: none;
+    }
+    .subscription-text-content {
+        text-align: left;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    /* On mobile, recenter the floating card */
+    .subscription-floating-card {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -20px;
+    }
+}
+/* =========================================
+   7. Best Sellers Section (Spacing Fixed & Isolated)
+   ========================================= */
+.best-sellers {
+    background-color: var(--white);
+    padding: 50px 0 50px;
+    position: relative;
+    /* Keep overflow visible for ripples, but manage z-index carefully */
+    overflow: visible; 
+    z-index: 2; /* Higher than default to hold ripples */
+}
+
+.best-sellers .container {
+    position: relative;
+    z-index: 3; /* Content sits above ripples */
+}
+
+.best-sellers .section-title {
+    text-align: center;
+    font-family: "Candal", sans-serif;
+    font-size: 5rem;
+    color: var(--mustard-yellow);
+    font-weight: 400; 
+    margin-bottom: 60px;
+}
+
+/* --- Ripples (Sent to back) --- */
+.seller-ripple-top-right,
+.seller-ripple-bottom-left {
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1; /* Behind the section background */
+    pointer-events: none;
+    background: repeating-radial-gradient(
+        circle at center,
+        transparent 0,
+        transparent 59px,
+        rgba(41, 108, 134, 0.3) 60px,
+        transparent 61px
+    );
+    mask-image: radial-gradient(circle, black 40%, transparent 75%);
+    -webkit-mask-image: radial-gradient(circle, black 40%, transparent 75%);
+}
+
+.seller-ripple-top-right {
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+}
+
+.seller-ripple-bottom-left {
+    bottom: -300px;
+    left: -300px;
+    width: 900px;
+    height: 900px;
+}
+
+/* --- Product Cards (Tight Layout) --- */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.product-card {
+    background: var(--white);
+    border: 1px solid var(--teal-blue); 
+    height: 500px;
+    border-radius: 24px; 
+    padding: 15px; 
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.product-image-container {
+    height: 3500px;
+    width: 100%;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.product-img {
+    width: 100%;
+    height: px;
+    object-fit: cover;
+    border-radius: 0; 
+}
+
+/* Info Area - Compact Spacing */
+.product-info {
+    padding: 0 5px 5px 5px; 
+    display: flex;
+    flex-direction: column;
+    /* Removed flex-grow: 1 to prevent button from pushing to bottom */
+}
+
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Reduced margin below title */
+    margin-bottom: 4px; 
+}
+
+.product-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+   
+    padding-right: 10px;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--mustard-yellow);
+    white-space: nowrap;
+}
+
+/* Rating Row - Removed extra margins */
+.product-rating {
+    
+    align-items: center;
+    gap: 6px;
+    
+    margin-top: 0;
+    margin-bottom: 8px;
+    background: none !important; 
+}
+
+.star-icon {
+    color: var(--mustard-yellow);
+    font-size: 1.1rem;
+    background: none !important; 
+    display: inline-block;
+}
+
+.p-reviews {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: none !important; 
+}
+
+/* Buttons - Positioned closer to content */
+.btn-cart {
+    display: block;
+    width: 60%;         /* smaller fixed width */
+    padding: 12px 0;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 8px auto 0;   /* centers the button inside the card */
+    background-color: var(--teal-blue);
+    color: var(--white);
+    text-align: center;
+}
+
+.btn-cart:hover {
+    background-color: var(--dark-blue);
+}
+
+.shop-cta {
+    text-align: center;
+}
+
+.btn-shop-all {
+    padding: 25px 60px;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    background-color: var(--teal-blue);
+    color: var(--white);
+}
+
+.btn-shop-all:hover {
+    background-color: var(--dark-blue);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto 40px;
+    }
+}
+
+/* =========================================
+   8. Reviews Section
+   ========================================= */
+.reviews {
+    background-color: var(--mustard-yellow); /* FIX: Ensure Yellow Background is Applied */
+    padding: 80px 0;
+    position: relative; 
+    /* Set z-index higher than the Best Sellers ripples (z-index -1)
+       to guarantee the yellow paint covers the ripples and white body background. */
+    z-index: 2; 
+    /* Prevents external elements/ripples from the section below from leaking */
+    overflow: hidden;
+}
+
+.reviews .section-title {
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 3.2rem;
+    font-family: "Candal", sans-serif;
+    margin-bottom: 1.5rem;
+}
+
+.reviews-intro {
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.testimonial-card {
+    background: var(--mustard-yellow);
+    border: 3px solid var(--text-dark);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    box-shadow: var(--shadow);
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 4rem;
+    color: var(--text-dark);
+    opacity: 0.2;
+    font-weight: bold;
+}
+
+.testimonial-name {
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.testimonial-rating {
+    color: var(--text-dark);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    color: var(--text-dark);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.reviews-conclusion {
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: 600;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   9. Footer
+   ========================================= */
+.footer {
+    background-color: var(--teal-blue);
+    color: var(--white);
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-logo .logo-icon {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.footer-logo .logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-heading {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+}
+
+.footer-contact {
+    margin-top: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.contact-icon {
+    font-size: 1.2rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: var(--mustard-yellow);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+}
+
+.email-subscription {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.email-input {
+    padding: 12px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    font-size: 0.95rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.email-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.email-input:focus {
+    border-color: var(--mustard-yellow);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+
+/* =========================================
+   10. Responsive Design
+   ========================================= */
+@media (max-width: 1024px) {
+    .hero-content,
+    .story-card,
+    .subscription-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .hero {
+        padding-top: 140px;
+        text-align: center;
+    }
+    
+    .hero-text {
+        margin: 0 auto;
+    }
+
+    .hero-image-wrapper {
+        height: 500px;
+    }
+
+    .mission-pillars,
+    .products-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Reposition stat cards for tablet */
+    .stat-card-1 {
+        left: 0;
+        top: 20%;
+    }
+    .stat-card-2 {
+        right: 0;
+        top: 10%;
+    }
+    .stat-card-3 {
+        right: 10%;
+        bottom: 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu,
+    .nav-actions {
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        position: fixed;
+        left: 0;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--teal-blue);
+        width: 100%;
+        text-align: center;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        padding: 2rem 0;
+        gap: 1rem;
+        z-index: 999;
+    }
+
+    .nav-actions.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        left: 0;
+        top: 300px;
+        width: 100%;
+        padding: 0 2rem;
+        gap: 1rem;
+        z-index: 999;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .hero-image-wrapper {
+        height: 420px;
+    }
+
+    .mission-pillars,
+    .products-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .story-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-image-wrapper {
+        height: 380px;
+    }
+
+    .stat-card {
+        transform: scale(0.85);
+        margin: 0;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
