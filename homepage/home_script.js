@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Dekenet Al Nes scripts loaded');
 
-   
+    /* =========================================
+       1. Mobile Navigation Logic
+       ========================================= */
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     const navActions = document.querySelector('.nav-actions');
@@ -13,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.remove('active');
             navActions?.classList.remove('active');
             
-           
+            // Reset hamburger icon
             const spans = navToggle.querySelectorAll('span');
             spans[0].style.top = '8px';
             spans[0].style.transform = 'none';
@@ -25,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.add('active');
             navActions?.classList.add('active');
 
-   
+            // Animate hamburger to X (Absolute Positioning)
             const spans = navToggle.querySelectorAll('span');
             spans[0].style.top = '50%';
             spans[0].style.transform = 'translateY(-50%) rotate(45deg)';
@@ -48,67 +50,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-   
+    /* =========================================
+       2. Auth Modal Logic (Functional)
+       ========================================= */
     const modal = document.getElementById('authModal');
     const closeBtn = document.querySelector('.close-modal');
     
-   
+    // Elements for switching
     const tabLogIn = document.getElementById('tabLogIn');
     const tabSignUp = document.getElementById('tabSignUp');
     const loginForm = document.getElementById('loginForm');
     const signupForm = document.getElementById('signupForm');
     const tabIndicator = document.querySelector('.tab-indicator');
     
-   
+    // Links inside the forms
     const linkToSignup = document.querySelector('.switch-to-signup');
     const linkToLogin = document.querySelector('.switch-to-login');
 
- 
+    // Function to Switch Tabs
     const switchTab = (tabName) => {
         if (tabName === 'login') {
-           
             tabLogIn.classList.add('active');
             tabSignUp.classList.remove('active');
-            
-           
             loginForm.classList.add('active');
             signupForm.classList.remove('active');
-            
-            
             if(tabIndicator) tabIndicator.style.transform = 'translateX(100%)'; 
         } else {
-            
             tabSignUp.classList.add('active');
             tabLogIn.classList.remove('active');
-            
-            
             signupForm.classList.add('active');
             loginForm.classList.remove('active');
-            
-            
             if(tabIndicator) tabIndicator.style.transform = 'translateX(0)';
         }
     };
 
-    
+    // Open/Close Modal
     const openModal = (initialTab) => {
         if(modal) {
-            modal.style.display = 'flex'; 
-           
+            modal.style.display = 'flex';
             switchTab(initialTab);
         }
     };
-
- 
     const closeModal = () => {
         if(modal) modal.style.display = 'none';
     };
 
-   
+    // Navigation Links Trigger
     document.querySelectorAll('.auth-link').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            
             const text = link.textContent.toLowerCase();
             if (text.includes('sign up')) {
                 openModal('signup');
@@ -117,7 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
- 
+
+    // Tab Clicks
     if(tabLogIn) {
         tabLogIn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -131,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    
+    // Switch Links
     if(linkToSignup) {
         linkToSignup.addEventListener('click', (e) => {
             e.preventDefault();
@@ -145,17 +136,64 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-   
+    // Close Actions
     if(closeBtn) closeBtn.addEventListener('click', closeModal);
-
-    
     window.addEventListener('click', (e) => {
         if (e.target === modal) {
             closeModal();
         }
     });
 
-   
+    /* --- Form Submission Logic (Simulation) --- */
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = loginForm.querySelector('button');
+            const originalText = btn.textContent;
+            
+            // Simulate Loading
+            btn.textContent = 'Logging in...';
+            btn.disabled = true;
+            btn.style.opacity = '0.7';
+
+            setTimeout(() => {
+                alert('Successfully Logged In!');
+                closeModal();
+                btn.textContent = originalText;
+                btn.disabled = false;
+                btn.style.opacity = '1';
+                // Reset form
+                loginForm.reset();
+            }, 1500);
+        });
+    }
+
+    if (signupForm) {
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = signupForm.querySelector('button');
+            const originalText = btn.textContent;
+            
+            // Simulate Loading
+            btn.textContent = 'Creating Account...';
+            btn.disabled = true;
+            btn.style.opacity = '0.7';
+
+            setTimeout(() => {
+                alert('Account Created Successfully! Please Log In.');
+                switchTab('login'); // Switch to login tab after signup
+                btn.textContent = originalText;
+                btn.disabled = false;
+                btn.style.opacity = '1';
+                // Reset form
+                signupForm.reset();
+            }, 1500);
+        });
+    }
+
+    /* =========================================
+       3. Smooth Scroll
+       ========================================= */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -168,6 +206,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    /* =========================================
+       4. Other Functionality
+       ========================================= */
     const emailSubscription = document.querySelector('.email-subscription');
     if (emailSubscription) {
         const emailForm = emailSubscription.querySelector('button');
@@ -203,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-  
+    // Intersection Observer
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -220,6 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
     
+    // Slideshow Logic
     const slides = document.querySelectorAll('.story-image-slider .slide');
     if (slides.length > 0) {
         let currentSlide = 0;

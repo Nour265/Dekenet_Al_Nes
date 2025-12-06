@@ -33,15 +33,13 @@
                 </li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#shop">Shop</a></li>
-                <li><a href="#contact">Contact Us</a></li>
                 <li>
                     <a href="#community" class="dropdown-link">
                         Community 
-                        <svg class="nav-icon chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M1 1L5 5L9 1"/>
-                        </svg>
+            
                     </a>
                 </li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
 
             <div class="nav-actions">
@@ -175,7 +173,7 @@
                     beneficiaries, we continue to create positive social and environmental 
                     impact across Lebanon.
                 </p>
-                <button class="btn btn-yellow">Explore More</button>
+                <button class="btn btn-yellow btn-story">Explore More</button>
             </div>
             
             <div class="story-image-slider">
@@ -235,43 +233,44 @@
         <div class="community-grid">
             <div class="comm-card">
                 <div class="comm-img-wrapper">
-                    <img src="../images/community1.png" alt="Local Grower" class="comm-img" 
-                         onerror="this.src='https://placehold.co/400x400/cccccc/296C86?text=Grower'" />
+                    <img src="../images/community1.png" alt="Local Pop-Up Market" class="comm-img" 
+                         onerror="this.src='https://placehold.co/400x400/cccccc/296C86?text=Market'" />
                 </div>
-                <h3 class="comm-title">Supporting Local<br>Growers</h3>
+                <h3 class="comm-title">Local Pop-Up Market</h3>
                 <p class="comm-desc">
-                    By buying fresh, local produce, our community empowers small farmers and cuts down on transport emissions.
+                    A weekend market celebrating local farmers and artisans, offering fresh goods and homemade products at fair prices.
                 </p>
+                <button class="btn btn-yellow btn-visit">Visit Us</button>
             </div>
 
             <div class="comm-card">
                 <div class="comm-img-wrapper">
-                    <img src="../images/community2.png" alt="Conscious Shopping" class="comm-img" 
-                         onerror="this.src='https://placehold.co/400x400/cccccc/296C86?text=Culture'" />
+                    <img src="../images/community2.png" alt="Clean-Up Walk" class="comm-img" 
+                         onerror="this.src='https://placehold.co/400x400/cccccc/296C86?text=Walk'" />
                 </div>
-                <h3 class="comm-title">Building a Conscious<br>Shopping Culture</h3>
+                <h3 class="comm-title">Clean-Up Walk</h3>
                 <p class="comm-desc">
-                    Every refill, every jar, every conversation in our store helps normalize sustainable habits every day you shop.
+                    Residents come together to clean nearby streets and public spaces, promoting environmental responsibility and teamwork.
                 </p>
+                <button class="btn btn-yellow btn-visit">Visit Us</button>
             </div>
 
             <div class="comm-card">
                 <div class="comm-img-wrapper">
-                    <img src="../images/community3.png" alt="Growing Together" class="comm-img" 
-                         onerror="this.src='https://placehold.co/400x400/cccccc/296C86?text=Together'" />
+                    <img src="../images/community3.png" alt="Kids Eco-Workshop" class="comm-img" 
+                         onerror="this.src='https://placehold.co/400x400/cccccc/296C86?text=Workshop'" />
                 </div>
-                <h3 class="comm-title">Growing Together,<br>Sustainably</h3>
+                <h3 class="comm-title">Kids Eco-Workshop</h3>
                 <p class="comm-desc">
-                    Farmers and shoppers connect directly, creating a transparent, trust-based, and earth-friendly food system.
+                    A fun educational session where children learn about recycling, sorting waste, and protecting the environment through creative activities.
                 </p>
+                <button class="btn btn-yellow btn-visit">Visit Us</button>
             </div>
-        </div>
-
-        <div class="comm-action">
-            <button class="btn btn-comm">Read More</button>
         </div>
     </div>
 </section>
+
+        
 
         <!-- Subscription Box Section -->
         <section id="subscription" class="subscription-box">
@@ -304,16 +303,16 @@
                 </p>
                 <ul class="benefits-list">
                     <li>
-                        Monthly container pickup & refill – we collect, refill, and deliver your essentials right to your door.
+                        • Monthly container pickup & refill – we collect, refill, and deliver your essentials right to your door.
                     </li>
                     <li>
-                        Member-only discounts on staple goods like olive oil, flour, bulgur, and detergents.
+                        • Member-only discounts on staple goods like olive oil, flour, bulgur, and detergents.
                     </li>
                     <li>
-                        Priority delivery for faster, hassle-free service.
+                        • Priority delivery for faster, hassle-free service.
                     </li>
                     <li>
-                        Early access to seasonal Lebanese products from local farmers and cooperatives.
+                        • Early access to seasonal Lebanese products from local farmers and cooperatives.
                     </li>
                 </ul>
                 <button class="btn btn-yellow btn-subscription">Subscribe yours</button>
@@ -564,6 +563,7 @@
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#shop">Shop</a></li>
                     <li><a href="#community">Community</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -593,20 +593,25 @@
         </div>
     </div>
 </footer>
-    <div id="authModal" class="modal">
+    <!-- Auth Modal -->
+<div id="authModal" class="modal">
     <div class="modal-content">
         <span class="close-modal">&times;</span>
         
+        <!-- Logo -->
         <div class="modal-logo">
             <img src="../images/logoc.png" alt="Dekenet Al Nes" />
         </div>
 
+        <!-- Tabs -->
         <div class="modal-tabs">
-    <button type="button" class="tab-btn" id="tabSignUp">SIGN UP</button>
-    <button type="button" class="tab-btn active" id="tabLogIn">LOG IN</button>
-    <div class="tab-indicator"></div>
-</div>
-        <div id="loginForm" class="auth-form active">
+            <button type="button" class="tab-btn" id="tabSignUp">SIGN UP</button>
+            <button type="button" class="tab-btn active" id="tabLogIn">LOG IN</button>
+            <div class="tab-indicator"></div>
+        </div>
+
+        <!-- Log In Form -->
+        <form id="loginForm" class="auth-form active">
             <div class="input-group">
                 <input type="email" placeholder="Email" required />
             </div>
@@ -619,14 +624,15 @@
                 <label for="remember">Remember me</label>
             </div>
 
-            <button class="btn btn-auth">Log In</button>
+            <button type="submit" class="btn btn-auth">Log In</button>
 
             <p class="auth-footer-text">
                 Don't have an account? <span class="auth-link-text switch-to-signup">Sign Up</span>
             </p>
-        </div>
+        </form>
 
-        <div id="signupForm" class="auth-form">
+        <!-- Sign Up Form -->
+        <form id="signupForm" class="auth-form">
             <div class="input-group">
                 <input type="text" placeholder="First name" required />
             </div>
@@ -641,15 +647,15 @@
                 Already have an account? <span class="auth-link-text switch-to-login">Log In</span>
             </p>
 
-            <button class="btn btn-auth">Sign Up</button>
-        </div>
+            <button type="submit" class="btn btn-auth">Sign Up</button>
+        </form>
 
+        <!-- Terms Footer -->
         <div class="modal-footer">
             <p>By continuing, you agree to Dekenet Al Nas <span class="highlight">Conditions of Use</span> and <span class="highlight">Privacy Policy</span></p>
         </div>
     </div>
 </div>
-
     <script src="home_script.js"></script>
 </body>
 </html>
