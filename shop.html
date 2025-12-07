@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dekenet AL Nes Shop</title>
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container-fluid">
+
+                <div class="nav-brand">
+                    <img src="images/logo.png" alt="Dekenet Al Nes" class="logo-img" />
+                </div>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li>
+                        <a href="#home">
+                            Home
+                        </a>
+                    </li>
+                    <li><a href="#about">About Us</a></li>
+                    <li>
+                        <a href="#shop" class="active">
+                            Shop
+                            <span class="active-dot"></span>
+                        </a>
+                    </li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li>
+                        <a href="#community" class="dropdown-link">
+                            Community
+                            <svg class="nav-icon chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 1L5 5L9 1" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="nav-actions">
+                    <div class="search-bar">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" placeholder="Search here" />
+                    </div>
+
+                    <div class="nav-icons">
+                        <a href="#" class="nav-icon-link">
+                            <img src="images/Group 125.png" alt="User Profile" class="nav-icon-img">
+                        </a>
+
+                        <a href="#" class="nav-icon-link">
+                            <img src="images/objects.png" alt="Shopping Cart" class="nav-icon-img">
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero-shop-wrapper">
+
+        <section class="hero-banner">
+            <div class="hero-image-wrapper">
+                <div class="hero-image-container">
+
+
+                    <!-- <div class="stat-card stat-card-1">
+                                <div class="stat-icon icon-yellow-box">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        <polyline points="10 9 9 9 8 9"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number">500+</div>
+                                    <div class="stat-label">Beneficiaries</div>
+                                </div>
+                            </div>
+
+                            <div class="stat-card stat-card-2">
+                                <div class="stat-progress-circle">
+                                    <svg width="60" height="60" viewBox="0 0 60 60">
+                                        <circle cx="30" cy="30" r="24" fill="none" stroke="#f0f0f0" stroke-width="5" />
+                                        <circle cx="30" cy="30" r="24" fill="none" stroke="#E1B23E" stroke-width="5" 
+                                                stroke-dasharray="150" stroke-dashoffset="35" transform="rotate(-90 30 30)" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                                <div class="stat-content centered">
+                                    <div class="stat-number">2K+</div>
+                                    <div class="stat-label">Plastics Saved</div>
+                                </div>
+                            </div> -->
+
+                    <!-- <div class="stat-card stat-card-3">
+                                <div class="stat-icon icon-yellow-box">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M2 3h20"></path>
+                                        <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"></path>
+                                        <path d="M9 21v-6"></path>
+                                    <path d="M15 21v-6"></path>
+                                </svg>
+                            </div> -->
+                </div>
+            </div>
+        </section>
+
+
+        <main class="shop-main-content">
+            <div class="container">
+                <div class="shop-card">
+
+                    <div class="shop-card-header">
+                        <div class="keywords-block">
+                            <h3>Keywords</h3>
+                            <div class="keyword-tags">
+                                <span class="tag active">Wheat <i class="fa-solid fa-xmark"></i></span>
+                                <span class="tag">Water <i class="fa-solid fa-xmark"></i></span>
+                                <span class="tag">Olive Oil <i class="fa-solid fa-xmark"></i></span>
+                            </div>
+                        </div>
+                        <div class="search-filter-box">
+                            <input type="text" placeholder="Olive Oil">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </div>
+
+
+
+                    <div class="shop-card-body">
+
+                        <aside class="filter-sidebar">
+                            <div class="sidebar-section">
+                                <h3>Category</h3>
+                                <h4 class="sub-heading">Our Products</h4>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="cleaning" checked>
+                                        <label for="cleaning">Cleaning</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="food" checked>
+                                        <label for="food">Food</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="drinks" checked>
+                                        <label for="drinks">Drinks</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-section">
+                                <h3>Price Range</h3>
+                                <div class="slider-container">
+                                    <input type="range" class="price-slider" id="priceSlider" min="0" max="10"
+                                        step="0.1" value="10">
+                                    <div class="price-display">
+                                        <span>Max Price: $<span id="priceValue">10.00</span></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-section">
+                                <h3>Food essentials</h3>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="labneh" checked>
+                                        <label for="labneh">Labneh</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="honey-jar" checked>
+                                        <label for="honey-jar">Honey Jar</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="wheat-grains" checked>
+                                        <label for="wheat-grains">Wheat Grains</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-section">
+                                <h3>Drinks essentials</h3>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="water" checked>
+                                        <label for="water">Water</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="milk" checked>
+                                        <label for="milk">Milk</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="shakes" checked>
+                                        <label for="shakes">Shakes</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <section class="product-grid">
+
+
+                            <div class="product-card" data-category="food" data-price="7.99">
+                                <div class="product-image-box">
+                                    <img src="images/Natural.png" alt="Natural Dried Thyme">
+                                </div>
+                                <div class="product-details">
+                                    <h4>Natural Olive Oil Soap</h4>
+                                    <div class="product-info-line">
+                                        <div class="rating">
+                                            <i class="fa-solid fa-star"></i> 5.0 (1.3 Reviews)
+                                        </div>
+                                        <span class="price">7.99$</span>
+                                    </div>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="food" data-food-essential="honey-jar"
+                                data-price="4.99">
+                                <div class="product-image-box">
+                                    <img src="images/Local.png" alt="Local Jam Jar">
+                                </div>
+                                <div class="product-details">
+                                    <h4>Local Jam Jar</h4>
+                                    <div class="product-info-line">
+                                        <div class="rating">
+                                            <i class="fa-solid fa-star"></i> 4.0 (2.3 Reviews)
+                                        </div>
+                                        <span class="price">4.99$</span>
+                                    </div>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="food" data-price="3.99">
+                                <div class="product-image-box">
+                                    <img src="images/Traditional.png" alt="Traditional Thyme Mix">
+                                </div>
+                                <div class="product-details">
+                                    <h4>Traditional Theme Mix</h4>
+                                    <div class="product-info-line">
+                                        <div class="rating">
+                                            <i class="fa-solid fa-star"></i> 4.0 (1.6 Reviews)
+                                        </div>
+                                        <span class="price">3.99$</span>
+                                    </div>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="food" data-food-essential="wheat-grains"
+                                data-price="4.20">
+                                <div class="product-image-box">
+                                    <img src="images/Wheat.png" alt="Wheat Grains">
+                                </div>
+                                <div class="product-details">
+                                    <h4>Wheat Grains</h4>
+                                    <div class="product-info-line">
+                                        <div class="rating">
+                                            <i class="fa-solid fa-star"></i> 4.8 (5 Reviews)
+                                        </div>
+                                        <span class="price">4.20$</span>
+                                    </div>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="food" data-food-essential="labneh"
+                                data-price="3.99">
+                                <div class="product-image-box">
+                                    <img src="images/Labneh.png" alt="Lebaneh Balls">
+                                </div>
+                                <div class="product-details">
+                                    <h4>Labneh Balls</h4>
+                                    <div class="product-info-line">
+                                        <div class="rating">
+                                            <i class="fa-solid fa-star"></i> 5.0 (1.3 Reviews)
+                                        </div>
+                                        <span class="price">3.99$</span>
+                                    </div>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="cleaning" data-price="3.99">
+                                <div class="product-image-box">
+                                    <img src="images/Laundry.png" alt="Laundry detergent">
+                                </div>
+                                <div class="product-details">
+                                    <h4>Laundry detergent</h4>
+                                    <div class="product-info-line">
+                                        <div class="rating">
+                                            <i class="fa-solid fa-star"></i> 5.0 (1.3 Reviews)
+                                        </div>
+                                        <span class="price">3.99$</span>
+                                    </div>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="food" data-price="2.99">
+                                <div class="product-image-box">
+                                    <img src="images/Natural.png" alt="Natural Dried Thyme">
+                                </div>
+                                <div class="product-details">
+                                    <h4>Natural Dried Thyme</h4>
+                                    <div class="product-info-line">
+                                        <div class="rating">
+                                            <i class="fa-solid fa-star"></i> 5.0 (1.3 Reviews)
+                                        </div>
+                                        <span class="price">2.99$</span>
+                                    </div>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="cleaning" data-price="9.99">
+                                <div class="product-image-box">
+                                    <img src="images/Herbal.png" alt="Herbal Hair Oil">
+                                </div>
+                                <div class="product-details">
+                                    <h4>Herbal Hair Oil</h4>
+                                    <div class="product-info-line">
+                                        <div class="rating">
+                                            <i class="fa-solid fa-star"></i> 5.0 (1.3 Reviews)
+                                        </div>
+                                        <span class="price">9.99$</span>
+                                    </div>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="cleaning" data-price="4.99">
+                                <div class="product-image-box">
+                                    <img src="images/Natural.png" alt="Natural Hand Soap">
+                                </div>
+                                <div class="product-details">
+                                    <h4>Natural Hand Soap</h4>
+                                    <div class="product-info-line">
+                                        <div class="rating">
+                                            <i class="fa-solid fa-star"></i> 5.0 (1.3 Reviews)
+                                        </div>
+                                        <span class="price">4.99$</span>
+                                    </div>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+
+
+                            <div class="pagination">
+                                <button class="nav-button prev">&lt; Previous</button>
+                                <span class="page-number">Page 2</span>
+                                <button class="nav-button next">Next &gt;</button>
+                            </div>
+                        </section>
+                    </div> <!-- end shop-card-body -->
+                </div> <!-- end shop-card -->
+            </div> <!-- end container -->
+        </main>
+
+    </div> <!-- end hero-shop-wrapper -->
+
+    <section class="recommended-products">
+        <h2>Best Sellers</h2>
+        <div class="container recommended-grid">
+            <div class="product-card">
+                <div class="product-image-box">
+                    <img src="images/Natural.png" alt="Natural Olive Oil Soap">
+                </div>
+                <div class="product-details">
+                    <h4>Natural Olive Oil Soap</h4>
+                    <div class="product-info-line">
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i> 5.0 (1.3 Reviews)
+                        </div>
+                        <span class="price">7.99$</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-box">
+                    <img src="images/Local.png" alt="Local Jam Jar">
+                </div>
+                <div class="product-details">
+                    <h4>Local Honey Jar</h4>
+                    <div class="product-info-line">
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i> 4.0 (2.3 Reviews)
+                        </div>
+                        <span class="price">4.99$</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-box">
+                    <img src="images/Traditional.png" alt="Traditional Thyme Mix">
+                </div>
+                <div class="product-details">
+                    <h4>Traditional Thyme Mix</h4>
+                    <div class="product-info-line">
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i> 4.0 (1.6 Reviews)
+                        </div>
+                        <span class="price">3.99$</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <button class="shop-all-button">SHOP ALL</button>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-ripple"></div>
+
+        <div class="container">
+            <div class="footer-content">
+
+                <div class="footer-col logo-col">
+                    <img src="images/logo.png" alt="Dekenet Al Nes" class="footer-logo-img" />
+                </div>
+
+                <div class="footer-col contact-col">
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <ul class="contact-list">
+                        <li>
+                            <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <div class="contact-text">
+                                <span>Lebanon, Mont-Lebanon</span>
+                                <span>Baakline</span>
+                            </div>
+                        </li>
+                        <li>
+                            <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span class="contact-text">DekenetAlNes@gmail.com</span>
+                        </li>
+                        <li>
+                            <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            <span class="contact-text">+961 81 927 835</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col nav-col">
+                    <ul class="footer-nav-list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#shop">Shop</a></li>
+                        <li><a href="#community">Community</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col social-col">
+                    <div class="social-icons">
+                        <a href="#" class="social-circle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-circle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-circle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-circle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="social-text">
+                        Join the fun! Follow us<br>on social media!
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright .DekenetAlNes.lb. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const searchInput = document.querySelector(".search-filter-box input");
+            const productCards = document.querySelectorAll(".product-card");
+
+            searchInput.addEventListener("input", () => {
+                const searchValue = searchInput.value.toLowerCase().trim();
+
+                productCards.forEach(card => {
+                    const title = card.querySelector("h4").textContent.toLowerCase();
+
+                    if (title.includes(searchValue)) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+
+            <div class="modal-logo">
+                <img src="../images/logoc.png" alt="Dekenet Al Nes" />
+            </div>
+
+            <div class="modal-tabs">
+                <button type="button" class="tab-btn" id="tabSignUp">SIGN UP</button>
+                <button type="button" class="tab-btn active" id="tabLogIn">LOG IN</button>
+                <div class="tab-indicator"></div>
+            </div>
+            <div id="loginForm" class="auth-form active">
+                <div class="input-group">
+                    <input type="email" placeholder="Email" required />
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required />
+                </div>
+
+                <div class="remember-me">
+                    <input type="checkbox" id="remember" />
+                    <label for="remember">Remember me</label>
+                </div>
+
+                <button class="btn btn-auth">Log In</button>
+
+                <p class="auth-footer-text">
+                    Don't have an account? <span class="auth-link-text switch-to-signup">Sign Up</span>
+                </p>
+            </div>
+
+            <div id="signupForm" class="auth-form">
+                <div class="input-group">
+                    <input type="text" placeholder="First name" required />
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Last name" required />
+                </div>
+                <div class="input-group">
+                    <input type="tel" placeholder="Phone number" required />
+                </div>
+
+                <p class="auth-footer-text left-align">
+                    Already have an account? <span class="auth-link-text switch-to-login">Log In</span>
+                </p>
+
+                <button class="btn btn-auth">Sign Up</button>
+            </div>
+
+            <div class="modal-footer">
+                <p>By continuing, you agree to Dekenet Al Nas <span class="highlight">Conditions of Use</span> and <span
+                        class="highlight">Privacy Policy</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="cartToast">
+        <img src="images/objects.png" alt="Cart Icon" style="filter: brightness(0) invert(1);">
+        <span id="cartToastMessage">Item added to cart!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
