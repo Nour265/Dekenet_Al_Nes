@@ -860,19 +860,7 @@ img {
     max-width: 350px;
 }
 
-.shop-all-button {
-    background-color: var(--primary-blue);
-    color: var(--light-text-color);
-    font-weight: 600;
-    padding: 15px 45px;
-    font-size: 1.1rem;
-    border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
 
-.shop-all-button:hover {
-    background-color: #21596e;
-}
 
 /* =========================================
     Main Shop Content
