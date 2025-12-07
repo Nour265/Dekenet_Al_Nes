@@ -963,7 +963,7 @@ img {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 .tag {
