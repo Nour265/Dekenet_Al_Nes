@@ -148,11 +148,48 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+        // --- CART STORAGE HELPERS ---
+    function getCartItems() {
+        const raw = localStorage.getItem('cartItems');
+        return raw ? JSON.parse(raw) : [];
+    }
+
+    function saveCartItems(items) {
+        localStorage.setItem('cartItems', JSON.stringify(items));
+    }
+
+    function addItemToCart(productCard) {
+        const name = productCard.querySelector('h4').textContent.trim();
+        const price = parseFloat(productCard.getAttribute('data-price')) || 0;
+        const imgEl = productCard.querySelector('.product-image-box img');
+        const image = imgEl ? imgEl.getAttribute('src') : '';
+        
+        let cart = getCartItems();
+
+        // If item already in cart, just increase quantity
+        const existing = cart.find(item => item.name === name);
+        if (existing) {
+            existing.quantity += 1;
+        } else {
+            cart.push({
+                name,
+                price,
+                image,
+                quantity: 1
+            });
+        }
+
+        saveCartItems(cart);
+        return name;
+    }
+
+
     cartButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.stopPropagation();
             const productCard = button.closest('.product-card');
-            const productName = productCard.querySelector('h4').textContent;
+            const productName = addItemToCart(productCard);
+            // const productName = productCard.querySelector('h4').textContent;
 
             productCard.classList.add('clicked');
 
