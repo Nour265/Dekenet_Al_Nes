@@ -1,5 +1,5 @@
 :root {
-    
+
     --primary-blue: #296C86;
     --secondary-yellow: #E1B23E;
     --mustard-yellow: #E1B23E;
@@ -12,7 +12,7 @@
     --dark-blue-footer: #21596e;
     --font-family: 'Roboto', sans-serif;
 
-    
+
     --primary-teal: var(--primary-blue);
     --accent-yellow: var(--mustard-yellow);
     --card-bg: #ffffff;
@@ -28,7 +28,7 @@
 
 body {
     font-family: var(--font-family);
-    
+
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
@@ -68,7 +68,7 @@ body {
 }
 
 .logo-img {
-    height: 70px;
+    height: 50px;
     width: auto;
     object-fit: contain;
 }
@@ -172,9 +172,16 @@ body {
 }
 
 .nav-icon-img {
-    width: 28px;
     height: auto;
     display: block;
+}
+
+.profile-icon {
+    width: 28px;
+}
+
+.cart-icon {
+    width: 35px;
 }
 
 
@@ -185,15 +192,15 @@ h3,
 h4,
 .section-title {
     font-family: 'Poppins', sans-serif;
-    
+
 }
 
 
 .story-section {
     background-color: var(--primary-teal);
-    
+
     padding: 180px 5% 80px;
-    
+
     text-align: center;
 }
 
@@ -223,15 +230,15 @@ h4,
     overflow: hidden;
     width: 1134px;
     max-width: 100%;
-    
+
     height: 436px;
     margin: 0 auto;
     padding: 0;
-    
+
     gap: 0;
-    
+
     align-items: center;
-    
+
 }
 
 .story-content {
@@ -239,7 +246,7 @@ h4,
     text-align: left;
     color: var(--text-dark);
     padding: 40px;
-    
+
 }
 
 .story-content p {
@@ -251,7 +258,7 @@ h4,
 
 .story-image {
     display: none;
-    
+
 }
 
 
@@ -313,7 +320,7 @@ h4,
     margin: 0 auto;
     display: flex;
     align-items: stretch;
-    
+
     gap: 60px;
     padding: 0 5%;
 }
@@ -337,10 +344,10 @@ h4,
     flex: 1;
     color: #333;
     align-self: flex-start;
-    
-    
-    
-    
+
+
+
+
 }
 
 .promise-text p {
@@ -348,7 +355,7 @@ h4,
     font-size: 0.95rem;
     color: #222;
     text-align: justify;
-    
+
 }
 
 
@@ -384,7 +391,7 @@ h4,
 }
 
 .footer-logo-img {
-    width: 100px;
+    width: 57px;
     height: auto;
     object-fit: contain;
     margin-top: 30px;
@@ -440,8 +447,12 @@ h4,
     color: var(--white);
     text-decoration: none;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 400;
     transition: 0.3s;
+}
+
+.footer-nav-list a.active {
+    font-weight: 700;
 }
 
 .footer-nav-list a:hover {
@@ -515,18 +526,18 @@ h4,
         width: 100%;
         padding: 20px;
         display: none;
-        
+
     }
 
     .header {
         position: relative;
-        
+
         background-color: var(--primary-blue);
     }
 
     .story-section {
         padding-top: 60px;
-        
+
     }
 
     .search-bar {
@@ -565,11 +576,11 @@ h4,
     width: 337px;
     height: 316px;
     flex: 0 0 337px;
-    
+
     margin-right: 40px;
-    
+
     margin: auto 40px auto 0;
-    
+
     border-radius: 20px;
 }
 
