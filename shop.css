@@ -218,9 +218,16 @@ img {
 }
 
 .nav-icon-img {
-    width: 28px;
     height: auto;
     display: block;
+}
+
+.nav-icon-img.profile-icon {
+    width: 20px;
+}
+
+.nav-icon-img.cart-icon {
+    width: 35px;
 }
 
 /* Mobile Toggle */
@@ -442,14 +449,14 @@ img {
 }
 
 .footer-nav-list li {
-    margin-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 .footer-nav-list a {
     color: var(--white);
     text-decoration: none;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 400;
     transition: var(--transition);
 }
 
