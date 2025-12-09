@@ -206,7 +206,7 @@ h4,
 
 .section-title {
     color: var(--white);
-    font-size: 2.2rem;
+    font-size: 40px;
     margin-bottom: 40px;
     font-weight: 700;
 }
@@ -250,6 +250,7 @@ h4,
 }
 
 .story-content p {
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     line-height: 1.7;
     margin-bottom: 1rem;
@@ -285,15 +286,15 @@ h4,
 
 .mission-item .icon-box {
     margin-bottom: 25px;
-    height: 100px;
+    height: 220px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
 
 .mission-item .icon-box img {
-    max-width: 80px;
-    max-height: 80px;
+    width: 217px;
+    height: 217px;
     object-fit: contain;
 }
 
@@ -304,8 +305,9 @@ h4,
 }
 
 .mission-item p {
+    font-family: 'Poppins', sans-serif;
     color: var(--text-grey);
-    font-size: 0.9rem;
+    font-size: 16px;
     line-height: 1.6;
 }
 
@@ -320,7 +322,6 @@ h4,
     margin: 0 auto;
     display: flex;
     align-items: stretch;
-
     gap: 60px;
     padding: 0 5%;
 }
@@ -351,11 +352,11 @@ h4,
 }
 
 .promise-text p {
+    font-family: 'Poppins', sans-serif;
     margin-bottom: 1.2rem;
-    font-size: 0.95rem;
+    font-size: 16px;
     color: #222;
     text-align: justify;
-
 }
 
 
@@ -440,7 +441,7 @@ h4,
 }
 
 .footer-nav-list li {
-    margin-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 .footer-nav-list a {
@@ -452,7 +453,7 @@ h4,
 }
 
 .footer-nav-list a.active {
-    font-weight: 700;
+    font-weight: 400;
 }
 
 .footer-nav-list a:hover {
