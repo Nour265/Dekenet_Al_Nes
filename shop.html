@@ -40,6 +40,12 @@
                     <li><a href="#contact">Contact Us</a></li>
                 </ul>
 
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
                 <div class="nav-actions">
                     <div class="search-bar">
                         <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -73,7 +79,7 @@
                 <div class="hero-image-container">
 
 
-                  
+
                 </div>
             </div>
         </section>
@@ -573,6 +579,17 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+     
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+    </script>
 </body>
 
 </html>
