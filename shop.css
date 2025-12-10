@@ -1,10 +1,10 @@
-/* Basic Reset and Variables */
+
 :root {
     --primary-blue: #296C86;
     --secondary-yellow: #E1B23E;
     --mustard-yellow: #E1B23E;
     --teal-blue: #296C86;
-    /* Defined here for clarity, was implicitly used */
+   
     --text-color: #333;
     --light-text-color: #fff;
     --white: #ffffff;
@@ -56,33 +56,27 @@ img {
     display: block;
 }
 
-/* ------------------ Header and Hero Styling ------------------ */
 
-/* =========================================
-    Header and Navigation
-    ========================================= */
-
-/* Ensure the header sits ON TOP of the hero, not above it */
 .header {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     background-color: transparent;
-    /* No background color */
+    
     box-shadow: none;
-    /* No shadow line */
+    
     border: none;
     z-index: 1000;
     padding-top: 15px;
 }
 
-/* Navbar Container */
+
 .navbar {
     width: 100%;
 }
 
-/* Fluid Container for wide navbar spacing */
+
 .container-fluid {
     width: 96%;
     max-width: 1800px;
@@ -93,7 +87,7 @@ img {
     padding: 0 20px;
 }
 
-/* Logo Size */
+
 .nav-brand {
     display: flex;
     align-items: center;
@@ -101,19 +95,18 @@ img {
 
 .logo-img {
     height: 50px;
-    /* Bigger logo */
+
     width: auto;
     object-fit: contain;
 }
 
-/* Nav Menu - Centered & Spaced */
 .nav-menu {
     display: flex;
     list-style: none;
     gap: 3rem;
     align-items: center;
     margin: 0 auto;
-    /* Centers the menu between logo and actions */
+
 }
 
 .nav-menu a {
@@ -124,12 +117,12 @@ img {
     position: relative;
     display: flex;
     flex-direction: row;
-    /* Arrow next to text */
+ 
     align-items: center;
     gap: 8px;
     transition: opacity 0.3s ease;
     padding-bottom: 0;
-    /* Reset padding from old styles if necessary */
+   
 }
 
 .nav-menu a:hover {
@@ -140,7 +133,7 @@ img {
     color: var(--white);
 }
 
-/* Active Dot - Floating below text */
+
 .active-dot {
     position: absolute;
     bottom: -10px;
@@ -153,30 +146,30 @@ img {
     display: block;
 }
 
-/* Nav Icons */
+
 .nav-icon {
     stroke: var(--white);
     margin-top: 2px;
 }
 
-/* Actions (Search + Auth) */
+
 .nav-actions {
     display: flex;
     align-items: center;
     gap: 1.5rem;
 }
 
-/* Search Bar */
+
 .search-bar {
     display: flex;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.2);
-    /* Transparent glass */
+    
     border-radius: 6px;
     padding: 0.7rem 1rem;
     gap: 0.8rem;
     width: 320px;
-    /* Long search bar */
+ 
     backdrop-filter: blur(5px);
 }
 
@@ -193,15 +186,14 @@ img {
     width: 100%;
     font-size: 0.95rem;
     padding-left: 0;
-    /* Reset padding */
+ 
 }
 
 .search-bar input::placeholder {
     color: rgba(255, 255, 255, 0.85);
 }
 
-/* Nav Icons */
-/* Nav Icons */
+
 .nav-icons {
     display: flex;
     align-items: center;
@@ -248,26 +240,20 @@ img {
 }
 
 
-/* =========================================
-    Hero + Shop Wrapper Background
-    ========================================= */
+
 .hero-shop-wrapper {
     background-color: var(--primary-blue);
     background-image: url('images/Group 641.png');
     background-repeat: no-repeat;
-    /* push the background image 100px down so it's not hidden behind the header */
     background-position: center 100px;
-    /* Make the top image span 100% of the width */
+  
     background-size: 100% auto;
     width: 100%;
     padding-top: 140px;
-    /* space for the header/nav */
     padding-bottom: 80px;
 }
 
-/* =========================================
-    Hero Banner Section (only the central card)
-    ========================================= */
+
 .hero-banner {
     background-color: transparent;
     position: relative;
@@ -282,33 +268,30 @@ img {
 .hero-image-wrapper {
     position: relative;
     width: 620px;
-    /* Outer ring width */
+   
     height: 700px;
-    /* **CRITICAL ADJUSTMENT**: Increased height to give space above the circle for the man's head and for positioning context of cards */
+
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    /* Push content to bottom of this taller wrapper */
     align-items: center;
-    /* Center horizontally */
+ 
     z-index: 2;
-    /* Removed previous negative margin-bottom to simplify */
+
 }
 
 .hero-image-container {
     position: relative;
     width: 100%;
     height: 620px;
-    /* This container *specifically* holds the circular elements to their size */
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    /* Aligns the circles to the bottom of this 620px height */
+ 
     z-index: 2;
-    /* Keep circles above man's image if needed */
+ 
 }
 
-/* 1. Yellow Circle (Back) */
 .bg-circle {
     position: absolute;
     width: 600px;
@@ -316,13 +299,12 @@ img {
     background: var(--mustard-yellow);
     border-radius: 50%;
     bottom: 0;
-    /* Aligned to the bottom of hero-image-container (620px) */
+   
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
 }
 
-/* 2. Thin Ring (Middle) */
 .bg-ring-offset {
     position: absolute;
     width: 620px;
@@ -330,13 +312,13 @@ img {
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 50%;
     bottom: 0;
-    /* Aligned to the bottom of hero-image-container (620px) */
+ 
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
 }
 
-/* 3. Yellow Dot (Decoration) */
+
 .bg-yellow-dot {
     position: absolute;
     width: 60px;
@@ -348,31 +330,25 @@ img {
     z-index: 3;
 }
 
-/* 4. The Man (Front - Upward and taller) */
 .hero-person-image {
     position: absolute;
-    /* CRITICAL ADJUSTMENT: This 'bottom' is relative to hero-image-wrapper (700px height) */
-    /* Adjust this to move the man up/down relative to the bottom of the *overall* wrapper */
-    /* Set bottom to 0 to align his feet with the base of the image-wrapper */
+
     left: 50%;
     transform: translateX(-50%);
     height: 750px;
-    /* **CRITICAL ADJUSTMENT**: Made him taller to extend clearly beyond the 620px circle */
     width: auto;
     object-fit: contain;
     z-index: 4;
-    /* Man on top of circles */
+    
 }
 
-/* --- STAT CARDS --- */
+
 .stat-card {
     position: absolute;
     background: white;
 }
 
-/* =========================================
-   Footer Section (Updated)
-   ========================================= */
+
 .footer {
     background-color: var(--teal-blue);
     color: var(--white);
@@ -508,9 +484,7 @@ img {
     color: rgba(255, 255, 255, 0.8);
 }
 
-/* =========================================
-   Auth Modal Section
-   ========================================= */
+
 .modal {
     display: none;
     position: fixed;
@@ -560,7 +534,7 @@ img {
     margin-bottom: 20px;
 }
 
-/* Tabs */
+
 .modal-tabs {
     display: flex;
     justify-content: space-between;
@@ -694,21 +668,21 @@ img {
 
 
 .stat-card-1 {
-    /* move card further down from the top of the hero */
+
     top: 200px;
     left: calc(50% - 310px);
-    /* Aligned to the left edge of the 620px ring */
+  
     background-color: var(--secondary-yellow);
     color: white;
     transform: translateX(-100%);
-    /* Shifts the card left by its full width so its right edge aligns with `left` */
+   
 }
 
 .stat-card-2 {
-    /* move card further down from the top of the hero */
+
     top: 200px;
     right: calc(50% - 310px);
-    /* Aligned to the right edge of the 620px ring */
+
     background-color: white;
     color: var(--primary-blue);
     flex-direction: column;
@@ -716,12 +690,12 @@ img {
     padding: 10px;
     width: 150px;
     transform: translateX(100%);
-    /* Shifts the card right by its full width so its left edge aligns with `right` */
+
 }
 
 .stat-card-3 {
     bottom: 80px;
-    /* Relative to hero-banner's bottom */
+  
     right: -120px;
     background-color: var(--primary-blue);
     color: white;
@@ -767,7 +741,6 @@ img {
     line-height: 1.2;
 }
 
-/* For stat-card-2's progress circle */
 .stat-progress-circle {
     position: relative;
     width: 60px;
@@ -783,9 +756,7 @@ img {
     left: 0;
 }
 
-/* =========================================
-   Our Story Section (Shop Page)
-   ========================================= */
+
 .our-story-section-shop {
     background-color: var(--primary-blue);
     padding: 80px 0;
@@ -839,9 +810,7 @@ img {
 }
 
 
-/* =========================================
-   Recommended Products Section
-   ========================================= */
+
 .recommended-products {
     background-color: var(--background-color);
     padding: 60px 0;
@@ -869,15 +838,13 @@ img {
 
 
 
-/* =========================================
-    Main Shop Content
-    ========================================= */
+
 .shop-main-content {
     background-color: transparent;
     padding-top: 40px;
 }
 
-/* Big white card that contains header + sidebar + products */
+
 .shop-card {
     background-color: #296C86;
     border-radius: 20px;
@@ -908,9 +875,7 @@ img {
     align-items: flex-start;
 }
 
-/* =========================================
-    Filter Sidebar
-    ========================================= */
+
 .filter-sidebar {
     padding-right: 24px;
     background-color: transparent;
@@ -944,7 +909,7 @@ img {
     font-size: 0.9rem;
 }
 
-/* Specific styling for search bar in shop-card-header */
+
 .shop-card-header .search-filter-box {
     background-color: var(--light-text-color);
     border-radius: 25px;
@@ -979,7 +944,7 @@ img {
     color: var(--light-text-color);
 }
 
-/* Sidebar Sections */
+
 .sidebar-section {
     margin-bottom: 30px;
 }
@@ -1047,7 +1012,7 @@ img {
     cursor: pointer;
 }
 
-/* Price Range Slider */
+
 .slider-container {
     margin-top: 10px;
 }
@@ -1102,12 +1067,7 @@ img {
 }
 
 
-/* =========================================
-    Product Grid Section
-    ========================================= */
-/* =========================================
-   Product Grid Section
-   ========================================= */
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1139,7 +1099,7 @@ img {
     border-radius: 8px;
     overflow: hidden;
     width: 100%;
-    /* Flexible width to fit grid */
+   
     height: 280px;
     display: flex;
     align-items: center;
@@ -1226,9 +1186,7 @@ img {
 }
 
 
-/* =========================================
-    Pagination
-    ========================================= */
+
 .pagination {
     grid-column: 1 / -1;
     display: flex;
@@ -1250,7 +1208,7 @@ img {
     transition: all 0.3s ease;
 }
 
-/* Active/Clicked state: White background, Yellow text */
+
 .nav-button.clicked,
 .nav-button:active {
     background-color: var(--white);
@@ -1265,12 +1223,11 @@ img {
     transform: translateX(-50%);
 }
 
-/* --- Added Styles for Alignment & Popups --- */
 .shop-card-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    /* Aligns search bar with bottom of text block */
+    
     margin-bottom: 2rem;
     width: 100%;
 }
@@ -1286,11 +1243,11 @@ img {
     align-items: center;
     background: white;
     width: 380px;
-    /* Requested width */
+   
     height: 36px;
-    /* Requested height */
+   
     padding: 0 15px;
-    /* Adjust padding to fit height */
+  
     border-radius: 30px;
     border: 1px solid #ddd;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -1303,7 +1260,7 @@ img {
     color: #333;
 }
 
-/* Wonderful Toast Popup */
+
 #cartToast {
     visibility: hidden;
     min-width: 300px;
@@ -1331,7 +1288,7 @@ img {
     visibility: visible;
     opacity: 1;
     top: 50%;
-    /* Just to trigger transition if needed */
+
 }
 
 #cartToast img {
@@ -1340,7 +1297,3 @@ img {
     margin-bottom: 10px;
 }
 
-
-/* =========================================
-   Responsive Design
-   ========================================= */
