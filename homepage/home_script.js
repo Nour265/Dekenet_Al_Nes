@@ -245,6 +245,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    /* =========================================
+       5. Subscription Button Listener (Reach Out Modal)
+       ========================================= */
+    const subscriptionBtn = document.querySelector('.btn-subscription');
+    
+    // Function to create the modal HTML if it doesn't exist
+    const createReachOutModal = () => {
+        if (document.getElementById('reachOutModal')) return;
+
+        const modalHtml = `
+        <div id="reachOutModal" class="modal">
+            <div class="modal-content reach-out-content" style="text-align: center; padding: 20px; border-radius: 20px; max-width: 300px; position: relative;">
+                <span class="close-reach-out" style="position: absolute; top: 15px; right: 25px; font-size: 20px; cursor: pointer; color: #aaa;">&times;</span>
+                
+                <h2 style="color: var(--mustard-yellow); font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.2rem; margin-bottom: 15px; margin-top: 10px;">
+                    Reach Out to Know More
+                </h2>
+                
+                <a href="tel:+9613285838" style="text-decoration: none;">
+                    <button class="btn" style="background-color: var(--teal-blue); color: white; padding: 12px 30px; margin-bottom: 15px; border-radius: 17px; font-size: 1rem; font-weight: 400; border: none; cursor: pointer; transition: background-color 0.3s;">
+                        +961 3285838
+                    </button>
+                </a>
+            </div>
+        </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+
+        // Add close logic for this new modal
+        const reachOutModal = document.getElementById('reachOutModal');
+        const closeReachOut = reachOutModal.querySelector('.close-reach-out');
+
+        closeReachOut.addEventListener('click', () => {
+            reachOutModal.style.display = 'none';
+        });
+
+        // Close on click outside
+        window.addEventListener('click', (e) => {
+            if (e.target === reachOutModal) {
+                reachOutModal.style.display = 'none';
+            }
+        });
+    };
+
+    if (subscriptionBtn) {
+        subscriptionBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            createReachOutModal(); // Create modal on first click
+            const reachOutModal = document.getElementById('reachOutModal');
+            if (reachOutModal) {
+                reachOutModal.style.display = 'flex'; // Open it
+            }
+        });
+    }
+
     // Intersection Observer
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
