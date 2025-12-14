@@ -131,9 +131,10 @@ body {
     align-items: center;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 6px;
-    padding: 0.7rem 1rem;
+    padding: 0 1rem;
     gap: 0.8rem;
-    width: 320px;
+    width: 412px;
+    height: 37px;
     backdrop-filter: blur(5px);
 }
 
@@ -199,7 +200,7 @@ h4,
 .story-section {
     background-color: var(--primary-teal);
 
-    padding: 180px 5% 80px;
+    padding: 100px 5% 80px;
 
     text-align: center;
 }
@@ -382,7 +383,7 @@ h4,
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -392,10 +393,10 @@ h4,
 }
 
 .footer-logo-img {
-    width: 57px;
+    width: 70px;
     height: auto;
     object-fit: contain;
-    margin-top: 30px;
+    margin-top: 70px;
 }
 
 .contact-col {
@@ -433,21 +434,23 @@ h4,
 }
 
 .nav-col {
-    flex: 0 0 15%;
+    flex: 0 0 10%;
 }
 
 .footer-nav-list {
     list-style: none;
+    margin-top: 30px;
+    padding-right: 20px;
 }
 
 .footer-nav-list li {
-    margin-bottom: 6px;
+    margin-bottom: 3px;
 }
 
 .footer-nav-list a {
     color: var(--white);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: 400;
     transition: 0.3s;
 }
@@ -502,13 +505,21 @@ h4,
     line-height: 1.5;
 }
 
+.follow-us-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
 .footer-bottom {
     text-align: center;
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.8);
 }
 
-/* Slider styles */
+
 .slider-container {
     position: relative;
     overflow: hidden;
@@ -537,11 +548,7 @@ h4,
 }
 
 
-/* ============================================
-   MOBILE RESPONSIVE STYLES
-   ============================================ */
 
-/* Hamburger Menu Button */
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -560,7 +567,6 @@ h4,
     transition: 0.3s;
 }
 
-/* Tablet and smaller laptops */
 @media (max-width: 992px) {
     .container-fluid {
         padding: 0 15px;
@@ -641,7 +647,7 @@ h4,
     }
 }
 
-/* Mobile devices */
+
 @media (max-width: 768px) {
     .container-fluid {
         flex-wrap: wrap;
@@ -811,7 +817,7 @@ h4,
     }
 }
 
-/* Small mobile devices */
+
 @media (max-width: 480px) {
     .logo-img {
         height: 40px;
