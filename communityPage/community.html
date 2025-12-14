@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dekenet AL Nes Community</title>
     <link rel="stylesheet" href="community.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
 </head>
-
 <body>
 
     <header class="header">
@@ -25,26 +25,24 @@
                     <li>
                         <a href="../homepage/home_index.html">Home</a>
                     </li>
-                    <li>
-                        <a href="../Aboutus/Aboutus.html">About Us</a>
-                    </li>
+                    <li><a href="../Aboutus/Aboutus.html">About Us</a></li>
                     <li>
                         <a href="../shop.html" class="active">Shop</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact Us</a>
-                    </li>
-                    <li>
-                        <a href="community.html" class="dropdown-link">
+                        <a href="community.html">
                             Community
-                            <svg class="nav-icon chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"
-                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M1 1L5 5L9 1" />
-                            </svg>
                             <span class="active-dot"></span>
                         </a>
                     </li>
+                    <li><a href="../contact/contact.html">Contact Us</a></li>
                 </ul>
+
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
                 <div class="nav-actions">
                     <div class="search-bar">
@@ -58,40 +56,27 @@
 
                     <div class="nav-icons">
                         <a href="#" class="nav-icon-link">
-                            <img src="../images/Group 125.png" alt="User Profile" class="nav-icon-img">
+                            <img src="../images/Group 125.png" alt="User Profile" class="nav-icon-img profile-icon">
                         </a>
-                        <a href="cart.html" class="nav-icon-link">
-                            <img src="../images/objects.png" alt="Shopping Cart" class="nav-icon-img">
+                        <a href="../cart.html" class="nav-icon-link">
+                            <img src="../images/objects.png" alt="Shopping Cart" class="nav-icon-img cart-icon">
                         </a>
                     </div>
-
-                    <!-- Mobile menu toggle -->
-                    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
                 </div>
             </div>
         </nav>
     </header>
 
     <div class="hero-section">
-        <section class="hero-banner">
-            <div class="community-hero-inner">
-
-                <!-- Dates card under image -->
-                <div class="dates-card">
-                    <p class="dates-subtitle">Check Our Available Dates</p>
-                    <div class="dates-pill-row">
-                        <button class="date-pill active">Dec 4</button>
-                        <button class="date-pill">Dec 12</button>
-                        <button class="date-pill">Dec 21</button>
-                        <button class="date-pill">Jan 2</button>
-                    </div>
-                </div>
+        <div class="dates-card">
+            <p class="dates-subtitle">Check Our Available Dates</p>
+            <div class="dates-pill-row">
+                <button class="date-pill">Dec 4</button>
+                <button class="date-pill">Dec 12</button>
+                <button class="date-pill">Dec 21</button>
+                <button class="date-pill">Jan 2</button>
             </div>
-        </section>
+        </div>
     </div>
 
     <main>
@@ -99,81 +84,74 @@
             <h2 class="events-heading">Upcoming Events</h2>
             <div class="container">
                 <section class="community-section">
-                    <div class="item">
-                        <img src="CommunityImages/community1.png" alt="">
-
-                        <h2>
-                            Local Pop-Up Market - <span>Dec 4</span>
-                        </h2>
-
+                    <div class="item" id="event-dec4">
+                        <img src="CommunityImages/community1.png" alt="Local Pop-Up Market event">
+                        <h2>Local Pop-Up Market - <span>Dec 4</span></h2>
                         <p><span>Empower Local Producers:</span> Give independent artisans and home based creators a
                             space to showcase their products.</p>
-
                         <p><span>Promote Sustainable Living:</span> Encourage zero-waste and plastic-free products to
                             inspire eco-conscious daily habits.</p>
-
                         <p><span>Strengthen Community Bonds:</span> Create a friendly space where people meet, learn,
                             and support each other.</p>
-
                         <button>Book Now!</button>
                     </div>
-
-                    <div class="item">
-                        <img src="CommunityImages/community2.png" alt="">
-
-                        <h2>
-                            Clean-Up Walk - <span>Dec 12</span>
-                        </h2>
-
+                    <div class="item" id="event-dec12">
+                        <img src="CommunityImages/community2.png" alt="Community clean-up walk">
+                        <h2>Clean-Up Walk - <span>Dec 12</span></h2>
                         <p><span>Reduce Litter & Pollution:</span> Help restore streets, beaches, parks, and natural
                             areas.</p>
-
                         <p><span>Promote Eco-Friendly Behavior:</span> Show how small, consistent actions can create
                             long-term environmental impact.</p>
-
                         <p><span>Educate Participants:</span> Teach simple waste-sorting and recycling daily habits.</p>
-
                         <button>Book Now!</button>
                     </div>
-
-                    <div class="item">
-                        <img src="CommunityImages/community3.png" alt="">
-
-                        <h2>
-                            Kids Eco-Workshop - <span>Dec 21</span>
-                        </h2>
-
+                    <div class="item" id="event-dec21">
+                        <img src="CommunityImages/community3.png" alt="Kids eco workshop">
+                        <h2>Kids Eco-Workshop - <span>Dec 21</span></h2>
                         <p><span>Encourage Creativity Through Upcycling:</span> Show kids how to turn everyday items
                             into something new.</p>
-
                         <p><span>Build Environmental Responsibility:</span> Help kids understand why protecting nature
                             matters.</p>
-
                         <p><span>Promote Community Awareness:</span> Inspire children to influence their families and
                             schools with eco-friendly habits.</p>
-
                         <button>Book Now!</button>
                     </div>
-
-                    <div class="item">
-                        <img src="CommunityImages/community4.png" alt="">
-
-                        <h2>
-                            Sustainable Living Talks - <span>Jan 2</span>
-                        </h2>
-
+                    <div class="item" id="event-jan2">
+                        <img src="CommunityImages/community4.png" alt="Sustainable living talk">
+                        <h2>Sustainable Living Talks - <span>Jan 2</span></h2>
                         <p><span>Make Sustainable Living Simple:</span> Teach practical eco-friendly habits that anyone
                             can apply daily.</p>
-
                         <p><span>Reduce Waste Mindfully:</span> Show how small changes, like reusing and refilling,
                             create big environmental impact.</p>
-
                         <p><span>Support Local Communities:</span> Highlight the importance of choosing local,
                             eco-friendly products.</p>
-
                         <button>Book Now!</button>
                     </div>
                 </section>
+            </div>
+        </section>
+
+        <section class="donation-section">
+            <div class="container donation-inner">
+                <div class="donation-graphic" aria-hidden="true">
+                    <div class="basket-illustration">
+                        <img src="CommunityImages/donation.png" alt="Donation basket">
+                    </div>
+                </div>
+
+                <div class="donation-content">
+                    <h3>Donation Basket</h3>
+                    <p>Support Dekenet al Nes by helping us uplift local families in need.</p>
+                    <ul class="donation-list">
+                        <li>Essential item collection: donate food, hygiene products, or household goods that go
+                            directly to families facing difficult times.</li>
+                        <li>Sustainable community support: your contributions reduce waste and help us provide
+                            consistent aid where it’s most needed.</li>
+                        <li>Transparent impact updates: stay informed on how your donations are distributed and the
+                            lives they help improve.</li>
+                    </ul>
+                    <button class="donate-btn">Donate Now!</button>
+                </div>
             </div>
         </section>
 
@@ -181,19 +159,94 @@
             <div class="container impact-strip-inner">
                 <div class="impact-item">
                     <div class="impact-number">$1.2M+</div>
-                    <div class="impact-label">Raised for Local Initiatives</div>
+                    <div class="impact-label">Raised Donations</div>
                 </div>
                 <div class="impact-item">
                     <div class="impact-number">85K+</div>
-                    <div class="impact-label">Plastic-Free Refills</div>
+                    <div class="impact-label">Saving Ones</div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-number">450K+</div>
+                    <div class="impact-label">Community</div>
                 </div>
                 <div class="impact-item">
                     <div class="impact-number">12K+</div>
-                    <div class="impact-label">Folks Reached</div>
+                    <div class="impact-label">Target Achieved</div>
                 </div>
             </div>
         </section>
     </main>
+
+    <div class="booking-overlay" id="bookingOverlay" aria-hidden="true">
+        <div class="booking-modal" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+            <button class="booking-close" type="button" aria-label="Close booking form">&times;</button>
+            <h3 id="bookingTitle">For Booking</h3>
+            <p id="bookingMessage">
+                Confirm your attendance for the Clean Up Walk on Dec 12. We'll add you to the dedicated WhatsApp group
+                for quick details and last-minute tips.
+            </p>
+            <label class="booking-field" for="bookingPhone">
+                <input type="tel" id="bookingPhone" name="bookingPhone" placeholder="Enter your phone number"
+                    aria-label="Enter your phone number">
+            </label>
+            <button class="booking-confirm" id="bookingConfirm" type="button">Confirmed</button>
+        </div>
+    </div>
+
+    <div class="donation-overlay" id="donationOverlay" aria-hidden="true">
+        <div class="donation-modal" role="dialog" aria-modal="true" aria-labelledby="donationTitle">
+            <button class="donation-close" type="button" aria-label="Close donation options">&times;</button>
+            <h3 id="donationTitle">Donate by</h3>
+            <div class="donation-options">
+                <label class="donation-option">
+                    <input type="checkbox" name="donationType" value="items">
+                    <span class="custom-check" aria-hidden="true"></span>
+                    <span class="option-text">Items (like clothing, food, etc.)</span>
+                </label>
+                <label class="donation-option">
+                    <input type="checkbox" name="donationType" value="money">
+                    <span class="custom-check" aria-hidden="true"></span>
+                    <span class="option-text">Money</span>
+                </label>
+            </div>
+            <button class="donation-proceed" id="donationProceed" type="button">Proceed</button>
+        </div>
+    </div>
+
+    <div class="card-overlay" id="cardOverlay" aria-hidden="true">
+        <div class="card-modal" role="dialog" aria-modal="true" aria-labelledby="cardTitle">
+            <button class="card-close" type="button" aria-label="Close card details">&times;</button>
+            <h3 id="cardTitle">Card Details</h3>
+            <p class="card-subtext">Please enter your card information to complete your donation.</p>
+            <form class="card-form" novalidate>
+                <label class="card-field">
+                    <span>Cardholder Name</span>
+                    <input type="text" name="cardName" placeholder=" " autocomplete="cc-name">
+                </label>
+                <label class="card-field">
+                    <span>Card Number</span>
+                    <input type="text" name="cardNumber" placeholder=" " autocomplete="cc-number" inputmode="numeric">
+                </label>
+                <div class="card-row">
+                    <label class="card-field">
+                        <span>Expiry Date</span>
+                        <input type="text" name="cardExpiry" placeholder="MM/YY" autocomplete="cc-exp" inputmode="numeric">
+                    </label>
+                    <label class="card-field">
+                        <span>CVV</span>
+                        <input type="password" name="cardCvv" placeholder="***" autocomplete="cc-csc" inputmode="numeric">
+                    </label>
+                </div>
+                <button class="card-proceed" id="cardProceed" type="button">Proceed</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="thank-overlay" id="thankOverlay" aria-hidden="true">
+        <div class="thank-modal" role="dialog" aria-modal="true" aria-labelledby="thankTitle">
+            <p id="thankTitle">Thank you for your donation!</p>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="footer-ripple"></div>
@@ -203,6 +256,16 @@
 
                 <div class="footer-col logo-col">
                     <img src="../images/logo.png" alt="Dekenet Al Nes" class="footer-logo-img" />
+                </div>
+
+                <div class="footer-col nav-col">
+                    <ul class="footer-nav-list">
+                        <li><a href="../homepage/home_index.html">Home</a></li>
+                        <li><a href="../Aboutus/Aboutus.html">About Us</a></li>
+                        <li><a href="../shop.html" class="active">Shop</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="../contact/contact.html">Contact Us</a></li>
+                    </ul>
                 </div>
 
                 <div class="footer-col contact-col">
@@ -237,15 +300,6 @@
                             </svg>
                             <span class="contact-text">+961 81 927 835</span>
                         </li>
-                    </ul>
-                </div>
-
-                <div class="footer-col nav-col">
-                    <ul class="footer-nav-list">
-                        <li><a href="../homepage/home_index.html">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="../shop.html">Shop</a></li>
-                        <li><a href="community.html">Community</a></li>
                     </ul>
                 </div>
 
@@ -303,7 +357,179 @@
             navMenu.classList.toggle('open');
             navToggle.classList.toggle('open');
         });
+
+        // Booking modal logic
+        const bookingOverlay = document.getElementById('bookingOverlay');
+        const bookingMessage = document.getElementById('bookingMessage');
+        const bookingPhoneInput = document.getElementById('bookingPhone');
+        const bookingConfirmBtn = document.getElementById('bookingConfirm');
+        const bookingCloseBtn = document.querySelector('.booking-close');
+        const donateBtn = document.querySelector('.donate-btn');
+        const donationOverlay = document.getElementById('donationOverlay');
+        const donationCloseBtn = document.querySelector('.donation-close');
+        const donationProceedBtn = document.getElementById('donationProceed');
+        const donationInputs = document.querySelectorAll('.donation-option input');
+        const cardOverlay = document.getElementById('cardOverlay');
+        const cardCloseBtn = document.querySelector('.card-close');
+        const cardProceedBtn = document.getElementById('cardProceed');
+        const thankOverlay = document.getElementById('thankOverlay');
+        const datePills = document.querySelectorAll('.date-pill');
+
+        const dateTargets = {
+            'Dec 4': '#event-dec4',
+            'Dec 12': '#event-dec12',
+            'Dec 21': '#event-dec21',
+            'Jan 2': '#event-jan2'
+        };
+
+        const openBooking = (cardButton) => {
+            const card = cardButton.closest('.item');
+            const title = card?.querySelector('h2')?.textContent.trim() || 'the event';
+            bookingMessage.textContent =
+                `Confirm your attendance for ${title}. We'll add you to the dedicated WhatsApp group for quick details and last-minute tips.`;
+
+            bookingOverlay.classList.add('open');
+            bookingOverlay.setAttribute('aria-hidden', 'false');
+            bookingPhoneInput.value = '';
+            bookingPhoneInput.focus();
+        };
+
+        const openDonation = () => {
+            donationOverlay.classList.add('open');
+            donationOverlay.setAttribute('aria-hidden', 'false');
+            donationInputs.forEach((input) => {
+                input.checked = false;
+            });
+            donationProceedBtn.focus();
+        };
+
+        const openCard = () => {
+            cardOverlay.classList.add('open');
+            cardOverlay.setAttribute('aria-hidden', 'false');
+            const firstCardInput = cardOverlay.querySelector('input');
+            if (firstCardInput) {
+                firstCardInput.value = '';
+                firstCardInput.focus();
+            }
+            cardOverlay.querySelectorAll('input').forEach((input) => {
+                if (input.name !== firstCardInput?.name) {
+                    input.value = '';
+                }
+            });
+        };
+
+        const openThank = () => {
+            thankOverlay.classList.add('open');
+            thankOverlay.setAttribute('aria-hidden', 'false');
+            setTimeout(closeThank, 1300);
+        };
+
+        const closeBooking = () => {
+            bookingOverlay.classList.remove('open');
+            bookingOverlay.setAttribute('aria-hidden', 'true');
+            bookingPhoneInput.value = '';
+        };
+
+        const closeDonation = () => {
+            donationOverlay.classList.remove('open');
+            donationOverlay.setAttribute('aria-hidden', 'true');
+        };
+
+        const closeCard = () => {
+            cardOverlay.classList.remove('open');
+            cardOverlay.setAttribute('aria-hidden', 'true');
+        };
+
+        const closeThank = () => {
+            thankOverlay.classList.remove('open');
+            thankOverlay.setAttribute('aria-hidden', 'true');
+        };
+
+        document.querySelectorAll('.community-section .item button').forEach((btn) => {
+            btn.addEventListener('click', () => openBooking(btn));
+        });
+
+        if (donateBtn) {
+            donateBtn.addEventListener('click', openDonation);
+        }
+
+        bookingOverlay.addEventListener('click', (event) => {
+            if (event.target === bookingOverlay) {
+                closeBooking();
+            }
+        });
+
+        donationOverlay.addEventListener('click', (event) => {
+            if (event.target === donationOverlay) {
+                closeDonation();
+            }
+        });
+
+        cardOverlay.addEventListener('click', (event) => {
+            if (event.target === cardOverlay) {
+                closeCard();
+            }
+        });
+
+        bookingCloseBtn.addEventListener('click', closeBooking);
+        donationCloseBtn.addEventListener('click', closeDonation);
+        cardCloseBtn.addEventListener('click', closeCard);
+        thankOverlay.addEventListener('click', (event) => {
+            if (event.target === thankOverlay) {
+                closeThank();
+            }
+        });
+
+          document.addEventListener('keydown', (event) => {
+              if (event.key === 'Escape' && bookingOverlay.classList.contains('open')) {
+                  closeBooking();
+              }
+              if (event.key === 'Escape' && donationOverlay.classList.contains('open')) {
+                closeDonation();
+            }
+            if (event.key === 'Escape' && cardOverlay.classList.contains('open')) {
+                closeCard();
+            }
+              if (event.key === 'Escape' && thankOverlay.classList.contains('open')) {
+                  closeThank();
+              }
+          });
+
+        datePills.forEach((pill) => {
+            pill.addEventListener('click', () => {
+                const label = pill.textContent.trim();
+                const selector = dateTargets[label];
+                if (selector) {
+                    const target = document.querySelector(selector);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        bookingConfirmBtn.addEventListener('click', () => {
+            bookingConfirmBtn.textContent = 'Saved!';
+            setTimeout(() => {
+                bookingConfirmBtn.textContent = 'Confirmed';
+                closeBooking();
+            }, 700);
+        });
+
+        donationProceedBtn.addEventListener('click', () => {
+            donationProceedBtn.textContent = 'Proceed';
+            closeDonation();
+            openCard();
+        });
+
+        cardProceedBtn.addEventListener('click', () => {
+            cardProceedBtn.textContent = 'Processing...';
+            setTimeout(() => {
+                cardProceedBtn.textContent = 'Proceed';
+                closeCard();
+                openThank();
+            }, 700);
+        });
     </script>
 </body>
-
 </html>

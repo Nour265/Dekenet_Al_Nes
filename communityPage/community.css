@@ -9,7 +9,7 @@
     --background-color: #f8f8f8;
     --border-color: #ddd;
     --dark-blue-footer: #21596e;
-    --font-family: 'Roboto', sans-serif;
+    --font-family: 'Poppins', sans-serif;
 }
 
 * {
@@ -97,7 +97,7 @@ img {
 }
 
 .logo-img {
-    height: 90px;
+    height: 50px;
     width: auto;
     object-fit: contain;
 }
@@ -205,9 +205,16 @@ img {
 }
 
 .nav-icon-img {
-    width: 28px;
     height: auto;
     display: block;
+}
+
+.nav-icon-img.profile-icon {
+    width: 20px;
+}
+
+.nav-icon-img.cart-icon {
+    width: 35px;
 }
 
 /* Hamburger toggle (hidden on desktop) */
@@ -245,33 +252,574 @@ img {
    HERO SECTION
    ====================== */
 
-.hero-section {
+.hero-section{
+  background-color: var(--teal-blue);
+  padding-top: 150px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ======================
+   DATES CARD
+   ====================== */
+
+.dates-card{
+  position: relative;
+  left: auto;
+  bottom: auto;
+  top: auto;
+  transform: none;
+
+  width: 820px;
+  max-width: 94%;
+  height: auto;
+  background: #ffffff;
+  border-radius: 34px;
+  padding: 20px 28px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+
+  box-shadow: var(--card-shadow);
+}
+
+.dates-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;      /* Medium */
+    font-size: 32px;
+    line-height: normal;   /* Auto */
+    letter-spacing: 0;
+    text-align: center;
+    color: #000000;
+    padding-bottom: 12px;
+}
+
+.dates-pill-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+}
+
+.date-pill {
+    border: none;
+    padding: 0 22px;
+    border-radius: 999px;
+    font-size: 26px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: var(--mustard-yellow);
+    color: #333;
+    transition: 0.2s ease;
+    width: 130px;
+    height: 48px;
+}
+
+.date-pill:hover {
     background-color: var(--primary-blue);
-    background-image: url('../images/Group 641.png');
-    background-repeat: no-repeat;
-    background-position: center 100px;
-    background-size: 100% auto;
-    width: 100%;
-    padding-top: 140px;
-    padding-bottom: 80px;
+    color: var(--white);
 }
 
-.hero-banner {
-    background-color: transparent;
-    position: relative;
-    overflow: visible;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    z-index: 1;
+/* ======================
+   UPCOMING EVENTS + CARDS
+   ====================== */
+
+.events-section {
+    background-color: var(--teal-blue);
+    padding: 0 0 40px;
+    color: #ffffff;
 }
 
-.community-hero-inner {
+.events-heading {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 0;
+    color: #ffffff;
+}
+
+/* GRID OF EVENT CARDS */
+.community-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0 70px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 56px 70px;
+    align-items: start;
+}
+
+/* Single event card */
+.item {
+    width: 100%;
+    max-width: 520px;
+    text-align: left;
+    color: var(--muted-text);
+}
+
+/* Image + hover zoom */
+.item img {
+    width: 100%;
+    display: block;
+    margin-bottom: 14px;
+    border-radius: 18px;
+    height: 270px;
+    object-fit: cover;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.35s ease-in-out;
+}
+
+.item:hover img {
+    transform: scale(1.08);
+}
+
+/* Title & date */
+.item h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 11px;
+    color: var(--light-text-color);
+}
+
+.item h2 span {
+    color: #f5c64b;
+}
+
+/* Description lines */
+.item p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 6px;
+    font-weight: 400;
+    color: var(--muted-text);
+}
+
+.item p span {
+    font-weight: 600;
+    color: var(--light-text-color);
+}
+
+/* Book button */
+.item button {
+    margin-top: 22px;
+    padding: 12px 34px;
+    background-color: #f5c64b;
+    color: #ffffff;
+    border: none;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+
+/* Hover: white button + yellow text */
+.item button:hover {
+    background-color: #ffffff;
+    color: #f5c64b;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.18);
+}
+
+/* ======================
+   DONATION SECTION
+   ====================== */
+
+.donation-section {
+    background-color: var(--teal-blue);
+    padding: 40px 0 80px;
+    color: var(--text-color);
+}
+
+.donation-inner {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.donation-graphic {
+    width: 420px;
+    flex: 1 1 380px;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.basket-illustration {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.basket-illustration img {
+    width: clamp(240px, 32vw, 320px);
+    max-width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 20px rgba(0,0,0,0.18));
+}
+
+.donation-content {
+    flex: 1 1 440px;
+}
+
+.donation-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.donation-content p {
+    color: var(--white);
+    font-size: 16px;
+    margin-bottom: 14px;
+}
+
+.donation-list {
+    list-style: disc;
+    padding-left: 18px;
+    margin: 0 0 20px;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    line-height: 1.6;
+}
+
+.donation-list li::marker {
+    color: var(--white);
+}
+
+.donate-btn {
+    background-color: var(--mustard-yellow);
+    color: #ffffff;
+    border-radius: 26px;
+    padding: 12px 24px;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    transition: all 0.25s ease-in-out;
+}
+
+.donate-btn:hover {
+    background-color: #ffffff;
+    color: var(--mustard-yellow);
+    box-shadow: var(--card-shadow);
+}
+
+/* ======================
+   IMPACT STRIP
+   ====================== */
+
+.impact-strip {
+    background-color: var(--mustard-yellow);
+    padding: 28px 0;
+}
+
+.impact-strip-inner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 34px;
+    flex-wrap: wrap;
+}
+
+.impact-item {
+    flex: 1;
+    min-width: 180px;
+    text-align: center;
+}
+
+.impact-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #274a59;
+}
+
+.impact-label {
+    font-size: 0.95rem;
+    color: #274a59;
+    margin-top: 4px;
+}
+
+/* ======================
+   BOOKING & DONATION MODALS
+   ====================== */
+
+.booking-overlay,
+.donation-overlay,
+.card-overlay,
+.thank-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.42);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 1100;
+}
+
+.booking-overlay.open,
+.donation-overlay.open,
+.card-overlay.open,
+.thank-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.booking-modal,
+.donation-modal,
+.card-modal,
+.thank-modal {
     position: relative;
+    width: min(520px, 95%);
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 34px 32px 30px;
+    text-align: center;
+    box-shadow: 0px 24px 54px rgba(0, 0, 0, 0.18);
+}
+
+.booking-modal h3 {
+    font-size: 32px;
+    color: var(--primary-blue);
+    margin-bottom: 16px;
+}
+
+.booking-modal p {
+    font-size: 16px;
+    color: #2f3d4b;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.booking-field {
+    display: block;
+    width: 100%;
+    margin: 0 auto 16px;
+}
+
+.booking-field input {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 999px;
+    border: 2px solid var(--teal-blue);
+    background: #fdfdfd;
+    font-size: 15px;
+    color: #22303b;
+    outline: none;
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.booking-field input::placeholder {
+    color: #8393a1;
+}
+
+.booking-field input:focus {
+    box-shadow: 0 0 0 3px rgba(41, 108, 134, 0.12);
+}
+
+.booking-confirm {
+    width: 180px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    background: var(--teal-blue);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.booking-confirm:hover {
+    background: #1f566c;
+    transform: translateY(-1px);
+}
+
+.booking-confirm:active {
+    transform: translateY(0);
+}
+
+.booking-close,
+.donation-close,
+.card-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: #8aa1af;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.booking-close:hover,
+.donation-close:hover,
+.card-close:hover {
+    color: #5a7385;
+}
+
+.donation-modal h3 {
+    font-size: 32px;
+    color: var(--mustard-yellow);
+    margin-bottom: 18px;
+}
+
+.donation-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 18px;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+}
+
+.donation-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: #22303b;
+    cursor: pointer;
+    position: relative;
+}
+
+.donation-option input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+
+.custom-check {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 2px solid var(--mustard-yellow);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.donation-option input:checked + .custom-check {
+    background-color: var(--mustard-yellow);
+    box-shadow: inset 0 0 0 2px #ffffff;
+}
+
+.donation-proceed {
+    width: 170px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: #ffffff;
+    color: var(--teal-blue);
+    border: 2px solid var(--teal-blue);
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.donation-proceed:hover {
+    background: rgba(41, 108, 134, 0.06);
+    transform: translateY(-1px);
+}
+
+.card-modal h3 {
+    font-size: 32px;
+    color: var(--mustard-yellow);
+    margin-bottom: 12px;
+}
+
+.card-subtext {
+    font-size: 15px;
+    color: #22303b;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.card-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    color: #22303b;
+}
+
+.card-field input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 2px solid #8fb4c4;
+    font-size: 15px;
+    outline: none;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card-field input:focus {
+    border-color: var(--teal-blue);
+    box-shadow: 0 0 0 3px rgba(41, 108, 134, 0.12);
+}
+
+.card-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.card-proceed {
+    width: 180px;
+    margin: 6px auto 0;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: #ffffff;
+    color: var(--teal-blue);
+    border: 2px solid var(--teal-blue);
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.card-proceed:hover {
+    background: rgba(41, 108, 134, 0.06);
+    transform: translateY(-1px);
+}
+
+.thank-modal {
+    width: min(360px, 90%);
+    padding: 24px 22px;
+    border-radius: 22px;
+    text-align: center;
+}
+
+.thank-modal p {
+    margin: 0;
+    color: var(--teal-blue);
+    font-size: 22px;
+    font-weight: 700;
 }
 
 /* ======================
@@ -306,7 +854,7 @@ img {
 }
 
 .footer-logo-img {
-    width: 120px;
+    width: 57px;
     height: auto;
     object-fit: contain;
     margin-top: 30px;
@@ -411,190 +959,6 @@ img {
     text-align: center;
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.8);
-}
-
-/* ======================
-   DATES CARD
-   ====================== */
-
-.dates-card {
-    position: absolute;
-    left: 50%;
-    bottom: -120px;
-    transform: translateX(-50%);
-    z-index: 20;
-    width: 803px;
-    height: 170px;
-    background: #ffffff;
-    border-radius: 26px;
-    padding: 18px 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    margin: 0;
-}
-
-.dates-subtitle {
-    font-weight: 600;
-    font-size: 32px;
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-}
-
-.dates-pill-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
-.date-pill {
-    border: none;
-    padding: 8px 18px;
-    border-radius: 999px;
-    font-size: 26px;
-    font-weight: 600;
-    cursor: pointer;
-    background-color: var(--mustard-yellow);
-    color: #333;
-    transition: 0.2s ease;
-    width: 130px;
-    height: 46px;
-}
-
-.date-pill:hover {
-    background-color: var(--primary-blue);
-    color: var(--white);
-}
-
-/* ======================
-   UPCOMING EVENTS + CARDS
-   ====================== */
-
-.events-section {
-    background-color: var(--teal-blue);
-    padding: 80px 0 70px;
-    color: #ffffff;
-}
-
-.events-heading {
-    font-size: 3rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 40px;
-    color: #ffffff;
-}
-
-/* GRID OF EVENT CARDS */
-.community-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px 80px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    column-gap: 80px;
-    row-gap: 60px;
-}
-
-/* Single event card */
-.item {
-    width: 430px;
-    text-align: center;
-}
-
-/* Image + hover zoom */
-.item img {
-    width: 100%;
-    display: block;
-    margin-bottom: 22px;
-    transition: transform 0.35s ease-in-out;
-}
-
-.item:hover img {
-    transform: scale(1.08);
-}
-
-/* Title & date */
-.item h2 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 18px;
-}
-
-.item h2 span {
-    color: #f5c64b;
-}
-
-/* Description lines */
-.item p {
-    font-size: 14px;
-    line-height: 1.7;
-    margin-bottom: 6px;
-}
-
-.item p span {
-    font-weight: 600;
-    color: #e1b23e;
-}
-
-/* Book button */
-.item button {
-    margin-top: 22px;
-    padding: 12px 34px;
-    background-color: #f5c64b;
-    color: #2e6e83;
-    border: none;
-    border-radius: 40px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.25s ease-in-out;
-}
-
-/* Hover: white button + yellow text */
-.item button:hover {
-    background-color: #ffffff;
-    color: #f5c64b;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.18);
-}
-
-/* ======================
-   IMPACT STRIP
-   ====================== */
-
-.impact-strip {
-    background-color: var(--mustard-yellow);
-    padding: 24px 0;
-    height: 147px;
-}
-
-.impact-strip-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-}
-
-.impact-item {
-    flex: 1;
-    min-width: 180px;
-    text-align: center;
-}
-
-.impact-number {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: #264653;
-}
-
-.impact-label {
-    font-size: 0.9rem;
-    color: #264653;
-    margin-top: 4px;
 }
 
 /* ======================
@@ -786,6 +1150,42 @@ img {
     .impact-strip {
         padding: 20px 0;
         height: auto;
+    }
+
+    .booking-modal,
+    .donation-modal,
+    .card-modal {
+        padding: 26px 22px 24px;
+        border-radius: 22px;
+    }
+
+    .booking-modal h3,
+    .donation-modal h3,
+    .card-modal h3 {
+        font-size: 26px;
+    }
+
+    .booking-modal p {
+        font-size: 14px;
+    }
+
+    .booking-confirm,
+    .donation-proceed,
+    .card-proceed {
+        width: 100%;
+    }
+
+    .donation-options {
+        width: 100%;
+    }
+
+    .card-row {
+        grid-template-columns: 1fr;
+    }
+
+    .basket-illustration img {
+        width: 220px;
+        max-height: 220px;
     }
 
     /* Footer stack */
